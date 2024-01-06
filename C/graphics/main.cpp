@@ -1,29 +1,18 @@
-#include<graphics.h>
-#include<conio.h>
-#include<dos.h>
+#include <graphics.h>
 
-main()
-{
-   int gd = DETECT, gm, x, y, color, angle = 0;
-   struct arccoordstype a, b;
-   initgraph(&gd, &gm, "C:\Program Files (x86)\Dev-Cpp");
-   delay(2000);                                                                
-   while(angle<=360)
-   {
-      setcolor(BLACK);
-      arc(getmaxx()/2,getmaxy()/2,angle,angle+2,100);
-      setcolor(RED);
-      getarccoords(&a);
-      circle(a.xstart,a.ystart,25);
-      setcolor(BLACK);
-      arc(getmaxx()/2,getmaxy()/2,angle,angle+2,150);
-      getarccoords(&a);
-      setcolor(GREEN);
-      circle(a.xstart,a.ystart,25);
-      angle = angle+5;
-      delay(50);
-   }
-   getch();
-   closegraph();
+int main() {
+   int gd = DETECT, gm;
+    initgraph(&gd, &gm, "C:\\TC\\BGI");
+
+    // Draw first circle
+    circle(50, 50, 75);
+
+    // Draw second circle
+    circle(50, 50, 125);
+
+    getch();
+    closegraph();
+  printf("© Pitam Poudel, BCA 2nd Semester, Ambition College");
+  return 0;
 }
 

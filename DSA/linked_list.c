@@ -92,7 +92,34 @@ void removeFromStart()
 	}
 	else
 	{
+		struct Node *temp = first_node;
 		first_node = first_node->next;
+		free(temp);
+	}
+}
+void removeFrom(int position)
+{
+	if (first_node == NULL)
+	{
+		printf("List is empty");
+	}
+	else if (position == 0)
+	{
+		first_node = NULL;
+		printf("List cleared");
+	}
+	else
+	{
+		struct Node *target_node = first_node;
+		struct Node *prev_node;
+		int i;
+		for (i = 1; i < position; i++)
+		{
+			prev_node = target_node;
+			target_node = target_node->next;
+		}
+		prev_node->next = target_node->next;
+		free(target_node);
 	}
 }
 void removeFromEnd()
@@ -103,7 +130,9 @@ void removeFromEnd()
 	}
 	else if (first_node->next == NULL)
 	{
+		struct Node *temp = first_node;
 		first_node = NULL;
+		free(first_node);
 		printf("List cleared");
 	}
 	else
@@ -119,6 +148,7 @@ void removeFromEnd()
 
 		second_last_node->next = NULL;
 		printf("deleted item from end: %d", last_node->value);
+		free(last_node);
 	}
 }
 
@@ -140,7 +170,7 @@ int main()
 	int option = 0;
 	while (option != -1)
 	{
-		printf("Choose an option:\n1. Insert node at start\n2. Insert node at position\n3. Insert node at end\n4. Delete node at start\n5. Delete node at end\n6. Display\n");
+		printf("Choose an option:\n1. Insert node at start\n2. Insert node at \n3. Insert node at end\n4. Delete node at start\n5. Delete node at\n6. Delete node at end\n7. Display\n");
 		scanf("%d", &option);
 		switch (option)
 		{
@@ -162,9 +192,18 @@ int main()
 			removeFromStart();
 			break;
 		case 5:
+		{
+			int position;
+			printf("\nPosition: ");
+			scanf("%d", &position);
+			removeFrom(position);
+			break;
+		}
+		break;
+		case 6:
 			removeFromEnd();
 			break;
-		case 6:
+		case 7:
 			displayList();
 			break;
 		default:

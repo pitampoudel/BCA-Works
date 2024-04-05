@@ -29,15 +29,11 @@ void insertAtStart()
 {
 	struct Node *new_node = createNode();
 
-	if (first_node == NULL)
-	{
-		first_node = new_node;
-	}
-	else
+	if (first_node != NULL)
 	{
 		new_node->next = first_node;
-		first_node = new_node;
 	}
+	first_node = new_node;
 }
 
 void insertAt(int position)

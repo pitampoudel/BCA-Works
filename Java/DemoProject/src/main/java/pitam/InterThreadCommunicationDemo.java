@@ -38,18 +38,11 @@ public class InterThreadCommunicationDemo {
     public static void main(String[] args) {
 
         final Customer c = new Customer();
-        new Thread() {
-            public void run() {
-                c.withdraw(15000);
-            }
+        new Thread(() -> c.withdraw(15000)).start();
 
-        }.start();
-
-        new Thread() {
-            public void run() {
-                c.deposit(10000);
-                System.out.println(c.amount);
-            }
-        }.start();
+        new Thread(() -> {
+            c.deposit(10000);
+            System.out.println(c.amount);
+        }).start();
     }
 }

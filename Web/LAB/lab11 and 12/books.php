@@ -37,8 +37,15 @@ if (isset($_GET['delete'])) {
     $conn->query("DELETE FROM books WHERE id=$id");
 }
 
-// Read
-$books = $conn->query("SELECT * FROM books");
+// Search data
+$search_query = "";
+if (isset($_POST['search'])) {
+    $search = $_POST['search'];
+    $search_query = "WHERE title LIKE '%$search%' OR author LIKE '%$search%'";
+}
+
+// READ
+$books = $conn->query("SELECT * FROM books $search_query");
 
 ?>
 
@@ -63,7 +70,12 @@ $books = $conn->query("SELECT * FROM books");
         <button type="submit" name="create">Add Book</button>
     </form>
 
-    <table>
+    <form method="post" action="">
+        <input type="text" name="search" placeholder="Search books">
+        <button type="submit">Search</button>
+    </form>
+
+    <table border="1">
         <tr>
             <th>ID</th>
             <th>Title</th>
@@ -93,16 +105,16 @@ if (isset($_GET['edit'])):
     $id = $_GET['edit'];
     $book = $conn->query("SELECT * FROM books WHERE id=$id")->fetch_assoc();
     ?>
-    <h2>Edit Book</h2>
-    <form method="post" action="">
-        <input type="hidden" name="id" value="<?=$book['id']?>">
-        <input type="text" name="title" value="<?=$book['title']?>" required>
-        <input type="text" name="author" value="<?=$book['author']?>" required>
-        <input type="number" name="year" value="<?=$book['year']?>" required>
-        <input type="number" step="0.01" name="price" value="<?=$book['price']?>" required>
-        <button type="submit" name="update">Update Book</button>
-    </form>
-    <?php endif;?>
+	    <h2>Edit Book</h2>
+	    <form method="post" action="">
+	        <input type="hidden" name="id" value="<?=$book['id']?>">
+	        <input type="text" name="title" value="<?=$book['title']?>" required>
+	        <input type="text" name="author" value="<?=$book['author']?>" required>
+	        <input type="number" name="year" value="<?=$book['year']?>" required>
+	        <input type="number" step="0.01" name="price" value="<?=$book['price']?>" required>
+	        <button type="submit" name="update">Update Book</button>
+	    </form>
+	    <?php endif;?>
 </body>
 
 </html>

@@ -7,6 +7,7 @@ int factorial(int n){
 
 
 int main(){
-	printf("%d",factorial(5));
+	printf("Factorial of 5 is %d\n",factorial(5));
+	printf("© Copyright Pitam Poudel. All Rights Reserved");
 	return 0;
 }

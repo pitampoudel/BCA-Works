@@ -35,7 +35,7 @@ void enqueue()
 			front = 0;
 		rear = (rear + 1) % ARR_SIZE;
 		arr[rear] = element;
-		printf("\n Inserted -> %d", element);
+		printf("\n Inserted -> %d\n", element);
 	}
 }
 
@@ -105,6 +105,6 @@ int main()
 			break;
 		}
 	}
-
+	printf("© Copyright Pitam Poudel. All Rights Reserved");
 	return 0;
 }

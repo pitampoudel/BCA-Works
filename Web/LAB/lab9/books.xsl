@@ -11,8 +11,6 @@
             </head>
             <body>
                 <h2>Bookstore</h2>
-                
-        
                 <table>
                     <tr>
                         <th>Title</th>

@@ -10,7 +10,6 @@ public class LoginPage extends JFrame {
 
         // JPanel
         JPanel contentPane = new JPanel();
-        contentPane.setLayout(null);
         setContentPane(contentPane);
 
         // Label

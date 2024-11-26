@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Practice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f2f5;
+        }
+
+        .container {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        input[type="text"] {
+            margin: 10px 0;
+            padding: 8px;
+            width: 100px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        h3 {
+            color: #555;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 id="msg" class="vertical-center"></h2>
+    </div>
+
+    <div class="container">
+        <label for="initial_num">Initial Number:</label>
+        <input type="number" name="initial_num" id="initial_num">
+        <br>
+        <br>
+        <label for="final_num">Final Number:</label>
+        <input type="number" name="final_num" id="final_num">
+        <br>
+        <br>
+        <button onclick="calculateSum()">Sum</button>
+        <h3 id="sum_result_text"></h3>
+    </div>
+
+    <script>
+        // Calculate sum of two numbers
+        function calculateSum() {
+            var a = parseInt(document.getElementById('initial_num').value);
+            var b = parseInt(document.getElementById('final_num').value);
+
+            if (a > b) {
+                return;
+            }
+            var sum = 0;
+            while (a <= b) {
+                sum += a;
+                a++;
+            }
+
+            document.getElementById('sum_result_text').innerHTML = 'Sum: ' + sum;
+        }
+
+        // Display schedule message based on current time
+        var now = new Date();
+        var message = "";
+        if ((now.getHours() == 6 && now.getMinutes() > 15) || (now.getHours() == 7 && now.getMinutes() < 55)) {
+            message = "Time for Scripting Language";
+        } else if ((now.getHours() == 7 && now.getMinutes() > 55) || (now.getHours() == 8) || (now.getHours() == 9 && now.getMinutes() < 35)) {
+            message = "Time for DBMS";
+        } else if ((now.getHours() == 9 && now.getMinutes() > 35) || (now.getHours() == 10)) {
+            message = "Time for NM";
+        } else {
+            message = "Time for Enjoy";
+        }
+        document.getElementById("msg").innerHTML = message;
+
+        // Bitwise operations and table of 2 in console
+        var a = 2;
+        var b = 3;
+        console.log(`${a} and ${b} is ${a & b}`);
+        console.log(`${a} or ${b} is ${a | b}`);
+        console.log(`${b} << 1 is ${b << 1}`);
+        console.log(`${b} >> 1 is ${b >> 1}`);
+        console.log("\n");
+
+        console.log("Table of 2:");
+        for (let i = 1; i <= 10; i++) {
+            console.log(`2 x ${i} = ${2 * i}`);
+        }
+
+        var sum = 0;
+        for (let i = 0; i <= 100; i++) {
+            sum += i;
+        }
+        console.log("Sum from zero to hundred is " + sum);
+    </script>
+</body>
+
+</html>

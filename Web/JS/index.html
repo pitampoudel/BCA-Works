@@ -75,6 +75,11 @@
         <br>
         <button onclick="calculateSum()">Sum</button>
         <h3 id="sum_result_text"></h3>
+
+    </div>
+
+    <div>
+        <h3 id="text_regex"></h3>
     </div>
 
     <script>
@@ -128,6 +133,11 @@
             sum += i;
         }
         console.log("Sum from zero to hundred is " + sum);
+
+
+        var text = "BCA@5012$HI";
+        var regex = /[a-z,A-Z,0-9]/g;
+        document.getElementById("text_regex").innerHTML = "TEXT EXTRACTED USING REGEX: " + text.match(regex);
     </script>
 </body>
 

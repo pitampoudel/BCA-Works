@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 #define EPSILON 0.01
 
 // x^3 - x^2 + 2

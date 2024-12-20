@@ -5,7 +5,7 @@ int main()
 {
     float x, xp, x0, y0, y, h, m1, m2;
     printf("Enter initial values of x and y\n");
-    scanf("%f%f", &x0, y0);
+    scanf("%f %f", &x0, y0);
     printf("Enter x at which function to be evaluated\n");
     scanf("%f", &xp);
     printf("Enter the step size\n");

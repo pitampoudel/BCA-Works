@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 8: Cookies and User Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: red;
+        }
+
+        #welcome {
+            margin-top: 20px;
+            font-size: 20px;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Lab 8: Cookies and User Validation</h2>
+
+    <form id="loginForm">
+        <label for="username">Enter Username:</label>
+        <input type="text" id="username" placeholder="Username (alphanumeric only)" required>
+        <button type="submit">Login</button>
+    </form>
+
+    <div id="message"></div>
+    <div id="welcome"></div>
+
+    <br><br>
+    <strong>© 2025 Pitam. All rights reserved.</strong>
+
+    <script>
+        // Function to set a cookie
+        function setCookie(name, value, days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            document.cookie = `${name}=${value};expires=${date.toUTCString()};path=/`;
+        }
+
+        // Function to get a cookie
+        function getCookie(name) {
+            const cookies = document.cookie.split(';');
+            for (let cookie of cookies) {
+                let [key, value] = cookie.trim().split('=');
+                if (key === name) return value;
+            }
+            return null;
+        }
+
+        // Validate username with regex
+        function isValidUsername(username) {
+            const regex = /^[a-zA-Z0-9]+$/; // Alphanumeric only
+            return regex.test(username);
+        }
+
+        // DOM Elements
+        const loginForm = document.getElementById('loginForm');
+        const usernameInput = document.getElementById('username');
+        const messageDiv = document.getElementById('message');
+        const welcomeDiv = document.getElementById('welcome');
+
+        // Check if the user is already logged in
+        const savedUsername = getCookie('username');
+        if (savedUsername) {
+            welcomeDiv.textContent = `Welcome back, ${savedUsername}!`;
+            loginForm.style.display = 'none'; // Hide the login form
+        }
+
+        // Handle form submission
+        loginForm.addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent form refresh
+            const username = usernameInput.value.trim();
+
+            if (isValidUsername(username)) {
+                setCookie('username', username, 7); // Save username in a cookie for 7 days
+                messageDiv.textContent = ''; // Clear error message
+                welcomeDiv.textContent = `Welcome, ${username}!`;
+                loginForm.style.display = 'none'; // Hide the form
+            } else {
+                messageDiv.textContent = 'Invalid username! Only alphanumeric characters are allowed.';
+            }
+        });
+    </script>
+</body>
+
+</html>

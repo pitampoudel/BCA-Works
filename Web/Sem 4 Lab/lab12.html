@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Demo</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $("#showText").click(() => $("#text").show());
+            $("#hideText").click(() => $("#text").hide());
+            $("#toggleText").click(() => $("#text").toggle());
+            $("#changeText").click(() => $("#text").text("Text changed!"));
+            $("#animateBox").click(() => $("#box").animate({ width: 200, height: 200, opacity: 0.5 }));
+            $("#changeCSS").click(() => $("#cssBox").css({ "background-color": "yellow", "color": "red" }));
+        });
+    </script>
+</head>
+
+<body>
+
+    <h2>LAB 12 jQuery with Different Elements</h2>
+
+    <!-- Buttons and Elements -->
+    <button id="showText">Show Text</button>
+    <button id="hideText">Hide Text</button>
+    <button id="toggleText">Toggle Text</button>
+    <button id="changeText">Change Text</button>
+    <p id="text" style="display:none;">Hidden Text</p>
+
+    <button id="animateBox">Animate Box</button>
+    <div id="box" style="width:100px;height:100px;background-color:blue;"></div>
+
+    <button id="changeCSS">Change CSS</button>
+    <div id="cssBox" style="width:100px;height:100px;background-color:green;"></div>
+
+    <footer>© 2025 Pitam. All rights reserved.</footer>
+
+</body>
+
+</html>

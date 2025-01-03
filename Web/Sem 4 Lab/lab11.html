@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Operations with Ajax, PHP, and MySQL</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function createUser() {
+            let name = $('#name').val();
+            let email = $('#email').val();
+            $.post('lab11.php', { action: 'create', name: name, email: email }, function (response) {
+                alert(response);
+                getUsers();
+            });
+        }
+
+        function getUsers() {
+            $.post('lab11.php', { action: 'read' }, function (response) {
+                $('#userList').html(response);
+            });
+        }
+
+        function updateUser(id) {
+            let name = $('#name_' + id).val();
+            let email = $('#email_' + id).val();
+            $.post('lab11.php', { action: 'update', id: id, name: name, email: email }, function (response) {
+                alert(response);
+                getUsers();
+            });
+        }
+
+        function deleteUser(id) {
+            $.post('lab11.php', { action: 'delete', id: id }, function (response) {
+                alert(response);
+                getUsers();
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <h2>LAB 11 CRUD Operations with Ajax, PHP, and MySQL</h2>
+    <form onsubmit="event.preventDefault(); createUser();">
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <button type="submit">Create User</button>
+    </form>
+    <h3>User List:</h3>
+    <div id="userList"></div>
+    <script>getUsers();</script>
+    <br><br>
+    <strong>© 2025 Pitam. All rights reserved.</strong>
+</body>
+
+</html>

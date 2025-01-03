@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 6: Basic Syntax in JavaScript</title>
+    <script>
+        // Variable Declaration
+        let name = "Pitam";
+        let age = 25;
+
+        // Arithmetic Operation
+        let sum = 10 + 20;
+
+        // Conditional Statement
+        let status = (age >= 18) ? "Adult" : "Minor";
+
+        // Loop Example
+        let numbers = [1, 2, 3, 4, 5];
+        let loopResult = "";
+        for (let num of numbers) {
+            loopResult += num + " ";
+        }
+
+        // Function with Parameter
+        function greet(userName) {
+            return `Hello, ${userName}!`;
+        }
+
+        // Function without Parameter
+        function sayHello() {
+            return "Hello, World!";
+        }
+
+        // Output Results in Console
+        console.log(`Name: ${name}, Age: ${age}`);
+        console.log(`Sum of 10 and 20: ${sum}`);
+        console.log(`Status: ${status}`);
+        console.log(`Numbers: ${loopResult}`);
+        console.log(greet(name));
+        console.log(sayHello());
+    </script>
+</head>
+
+<body>
+    <h2>Lab 6: Basic Syntax in JavaScript</h2>
+    <p>Open the browser console to see the output.</p>
+
+    <br><br>
+    <strong>© 2025 Pitam. All rights reserved.</strong>
+</body>
+
+</html>

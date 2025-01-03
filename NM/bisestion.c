@@ -1,44 +1,45 @@
 #include <stdio.h>
+#include <conio.h>
 
-#define EPSILON 0.01
-
-// x^3 - x^2 + 2
-double func(double x)
+int a0, a1, a2, a3;
+float f(float x)
 {
-    return x * x * x - x * x + 2;
-}
-
-// Prints root of func(x) with error of EPSILON
-void bisection(double a, double b)
-{
-    if (func(a) * func(b) >= 0)
-    {
-        printf("You have not assumed right a and b\n");
-        return;
-    }
-
-    double c = a;
-    while ((b - a) >= EPSILON)
-    {
-        // Find middle point
-        c = (a + b) / 2;
-
-        // Check if middle point is root
-        if (func(c) == 0.0)
-            break;
-
-        // Decide the side to repeat the steps
-        else if (func(c) * func(a) < 0)
-            b = c;
-        else
-            a = c;
-    }
-    printf("The value of root is : %d", c);
+    return (a3 * x * x * x + a2 * x * x + a1 * x + a0);
 }
 
 int main()
 {
-    // Initial range assumed
-    bisection(-200, 300);
+    float xl, xu, xm, fxl, fxu, fxm, E, ER;
+
+    printf("Pitam Poudel\n");
+    printf("Enter coefficients a3, a2, a1, a0: ");
+    scanf("%d%d%d%d", &a3, &a2, &a1, &a0);
+    printf("Enter initial guesses xl, xu and tolerance E: ");
+    scanf("%f%f%f", &xl, &xu, &E);
+
+    while (1)
+    {
+        fxl = f(xl);
+        fxu = f(xu);
+        xm = (xl + xu) / 2;
+        fxm = f(xm);
+
+        if (fxm == 0 || (xu - xl) / 2 < E)
+        {
+            printf("Root = %f\n", xm);
+            break;
+        }
+
+        if (fxl * fxm < 0)
+        {
+            xu = xm;
+        }
+        else
+        {
+            xl = xm;
+        }
+    }
+
+    getch();
     return 0;
 }

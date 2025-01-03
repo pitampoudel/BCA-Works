@@ -8,6 +8,7 @@ $nameFromRequest = $_REQUEST['name'];
 echo "$nameFromPost received from POST";
 echo "$nameFromGet received from GET";
 echo "$nameFromRequest received from REQUEST";
+echo "<br><br>© 2025 Pitam. All rights reserved.";
 
 ?>
 

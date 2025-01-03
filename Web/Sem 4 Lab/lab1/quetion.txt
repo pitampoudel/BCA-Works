@@ -1,6 +1,0 @@
-Implement basic syntaxt on php
-* Variable declaration
-* PHP operator
-* If-Else statement
-* while/do while/for/for each loops
-* Function: Parameter and non parameter

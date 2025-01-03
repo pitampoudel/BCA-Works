@@ -1,26 +1,32 @@
 #include <stdio.h>
 #include <conio.h>
+
 int main()
 {
-    int n, i, j, k;
-    float a = 0, b = 0, x[10], y[10], sx = 0, sy = 0, sxy = 0, sxz = 0;
-    printf("Enter the number of points\n");
+    int n, i;
+    float x[100], y[100], sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0;
+    float slope, intercept;
+
+    printf("Enter the number of data points: ");
     scanf("%d", &n);
-    printf("Enter the value of x and fx\n");
+
+    printf("Enter the values of x and y:\n");
     for (i = 0; i < n; i++)
     {
+        printf("x[%d], y[%d]: ", i, i);
         scanf("%f%f", &x[i], &y[i]);
+        sumX += x[i];
+        sumY += y[i];
+        sumXY += x[i] * y[i];
+        sumX2 += x[i] * x[i];
     }
-    for (i = 0; i < n; i++)
-    {
-        sx = sx + x[i];
-        sy = sy + y[i];
-        sxy = sxy + x[i] * y[i];
-        sxz = sxz + x[i] * x[i];
-    }
-    b = ((n * sxy) - (sx * sy)) / ((n * sxz) - (sx * sx));
-    a = (sy / n) - (b * sx / n);
-    printf("Fitted line is:%f+%fx", a, b);
+
+    // Calculate slope and intercept
+    slope = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX);
+    intercept = (sumY - slope * sumX) / n;
+
+    printf("\nThe Linear Regression Line is: y = %.2fx + %.2f\n", slope, intercept);
+
     getch();
-    // return 0;
+    return 0;
 }

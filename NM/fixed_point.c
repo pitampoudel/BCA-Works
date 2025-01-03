@@ -9,7 +9,7 @@ int main()
     printf("Enter coefficient a3,a2,a1,a0\n");
     scanf("%f%f%f%f", &a3, &a2, &a1, &a0);
     printf("Enter initial guess and E\n");
-    scanf("%f%f%", &x0, &E);
+    scanf("%f%f", &x0, &E);
     while (1)
     {
         x1 = G(x0);

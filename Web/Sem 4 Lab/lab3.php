@@ -14,3 +14,5 @@ $conn->query($sql);
 // DELETE
 $sql = "DELETE FROM users WHERE name='John Doe'";
 $conn->query($sql);
+
+echo "<br><br>© 2025 Pitam. All rights reserved.";

@@ -1,0 +1,12 @@
+Qn.1 Implement a class to demonostrate a static method.
+Qn.2 Implement a class to demonostrate constructor and destructor.
+Qn.3 Define a class named "Person" and demonstrate constructor overloading.
+Qn.4 Write a program to demonstrate use of interface.
+Qn.5 Write a program to demonstrate use of an abstract class.
+Qn.6 Write a program to demonstrate multiple inheritance.
+Qn.7 Write a program to demonstrate multilevel inheritance.
+Qn.8 Write a program to demonstrate use of "this" keyword.
+Qn.9 Write a program to demonstrate use of "base" keyword.
+Qn.10 Write a program to demonstrate use of method overloading.
+Qn.11 Write a program to demonstrate use of method overriding.
+Qn.12 Write a program to demonstrate operator overloading.

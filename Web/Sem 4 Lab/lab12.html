@@ -10,10 +10,6 @@
         $(function () {
             $("#showText").click(() => $("#text").show());
             $("#hideText").click(() => $("#text").hide());
-            $("#toggleText").click(() => $("#text").toggle());
-            $("#changeText").click(() => $("#text").text("Text changed!"));
-            $("#animateBox").click(() => $("#box").animate({ width: 200, height: 200, opacity: 0.5 }));
-            $("#changeCSS").click(() => $("#cssBox").css({ "background-color": "yellow", "color": "red" }));
         });
     </script>
 </head>
@@ -25,15 +21,7 @@
     <!-- Buttons and Elements -->
     <button id="showText">Show Text</button>
     <button id="hideText">Hide Text</button>
-    <button id="toggleText">Toggle Text</button>
-    <button id="changeText">Change Text</button>
     <p id="text" style="display:none;">Hidden Text</p>
-
-    <button id="animateBox">Animate Box</button>
-    <div id="box" style="width:100px;height:100px;background-color:blue;"></div>
-
-    <button id="changeCSS">Change CSS</button>
-    <div id="cssBox" style="width:100px;height:100px;background-color:green;"></div>
 
     <footer>© 2025 Pitam. All rights reserved.</footer>
 

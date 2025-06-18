@@ -2,11 +2,11 @@
 #include<conio.h>
 #include<stdio.h>
 int main(){
-	printf("Saudeep Adhikari");
+	printf("© 2025 Pitam Poudel. All rights reserved.\n");
 	int gd=DETECT, gm,i;
 	float x,y,dx,dy,steps;
 	int x0,x1,y0,y1;
-	initgraph(&gd,&gm,"C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Bloodshed Dev-C++");
+	initgraph(&gd,&gm,"");
 	setbkcolor(WHITE);
 	x0=100,y0=200,x1=500,y1=300;
 	dx=(float)(x1-x0);
@@ -29,4 +29,5 @@ int main(){
 	}
 	getch();
 	closegraph();
+
 }

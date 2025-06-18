@@ -7,7 +7,7 @@ void scalePoint(float *x, float *y, float sx, float sy) {
 
 int main() { 
 	float x, y, scale_x, scale_y;
-	printf("Saudeep Adhikari\n");
+	printf("© 2025 Pitam Poudel. All rights reserved.\n");
 	 
 	// Get input from user 
 	printf("Enter the x-coordinate: ");

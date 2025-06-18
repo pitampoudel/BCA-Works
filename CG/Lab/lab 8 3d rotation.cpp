@@ -51,9 +51,7 @@ void drawLine3D(Point3D a, Point3D b) {
 }
 
 int main() {
-    int gd = DETECT, gm;
-    initgraph(&gd, &gm, "");
-	printf("Saudeep Adhikari\n");
+	printf("© 2025 Pitam Poudel. All rights reserved.\n");
     // Define a cube with 8 vertices
     Point3D cube[8] = {
         {-50, -50, -50}, {50, -50, -50},
@@ -71,6 +69,9 @@ int main() {
     printf("Enter rotation angle about Z-axis: ");
     scanf("%f", &angleZ);
 
+    int gd = DETECT, gm;
+    initgraph(&gd, &gm, "");
+    
     // Apply rotation to all cube vertices
     for (int i = 0; i < 8; i++) {
         rotateX(&cube[i], angleX);

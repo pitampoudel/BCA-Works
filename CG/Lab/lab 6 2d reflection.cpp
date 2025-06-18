@@ -25,7 +25,7 @@ void reflectYeqX(int x[], int y[], int n) {
 }
 
 int main() {
-		printf("Saudeep Adhikari\n");
+	printf("© 2025 Pitam Poudel. All rights reserved.\n");
 
     int gd = DETECT, gm;
     initgraph(&gd, &gm, "");

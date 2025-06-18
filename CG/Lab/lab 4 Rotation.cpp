@@ -11,7 +11,7 @@ void rotatePoint(float *x, float *y, float theta) {
 
 int main() {
     float x, y, angle_degrees;
-	printf("Saudeep Adhikari\n");
+	printf("© 2025 Pitam Poudel. All rights reserved.\n");
     // Get input from user
     printf("Enter the x-coordinate: ");
     scanf("%f", &x);

@@ -53,7 +53,7 @@ void translate(Point3D points[], float dx, float dy, float dz) {
 }
 
 int main() {
-		printf("Saudeep Adhikari\n");
+	printf("© 2025 Pitam Poudel. All rights reserved.\n");
 
     int gd = DETECT, gm;
     initgraph(&gd, &gm, "");

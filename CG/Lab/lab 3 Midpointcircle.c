@@ -32,7 +32,6 @@ void midPointCircleDraw(int x_centre, int y_centre, int r) {
 }
 
 int main() {
-    printf("Saudeep Adhikari\n\n");
     midPointCircleDraw(0, 0, 3);
     return 0;
 }

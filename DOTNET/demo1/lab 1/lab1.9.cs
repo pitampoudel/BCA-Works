@@ -1,8 +1,8 @@
 using System;
 
-public class Factorial
+public class Lab1_9
 {
-    public static void Calculate()
+    public static void CalculateFactorial()
     {
         Console.WriteLine("Pitam Poudel");
 

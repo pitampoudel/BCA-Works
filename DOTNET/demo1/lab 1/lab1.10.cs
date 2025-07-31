@@ -1,8 +1,8 @@
 using System;
 
-public class PrimeSum
+public class Lab1_10
 {
-    public static void Calculate()
+    public static void CalculatePrimeSum()
     {
         Console.WriteLine("Pitam Poudel");
         int count = 0;

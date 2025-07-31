@@ -1,8 +1,8 @@
 using System;
 
-public class DivideByZeroHandler
+public class Lab1_13
 {
-    public static void HandleDivision()
+    public static void HandleDivideByZero()
     {
         Console.WriteLine("Pitam Poudel");
         try

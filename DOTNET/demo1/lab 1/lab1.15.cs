@@ -1,6 +1,6 @@
 using System;
 
-public class RefOutDemo
+public class Lab1_15
 {
     // Method using ref keyword
     public static void IncrementByRef(ref int number)
@@ -15,7 +15,7 @@ public class RefOutDemo
         product = a * b;
     }
 
-    public static void Demonstrate()
+    public static void RefOutDemo()
     {
         Console.WriteLine("Pitam Poudel");
         Console.WriteLine("Demonstrating ref and out keywords:");

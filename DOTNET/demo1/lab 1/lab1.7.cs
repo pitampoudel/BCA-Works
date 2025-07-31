@@ -1,8 +1,8 @@
 using System;
 
-class Matrix
+class Lab1_7
 {
-    public static void Multiplication()
+    public static void execute()
     {
         Console.WriteLine("Pitam Poudel");
         int[,] matrix1 = new int[2, 2];

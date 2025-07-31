@@ -1,8 +1,8 @@
 using System;
 
-public class StringMethods
+public class Lab1_12
 {
-    public static void Demonstrate()
+    public static void StringMethods()
     {
         Console.WriteLine("Pitam Poudel");
 

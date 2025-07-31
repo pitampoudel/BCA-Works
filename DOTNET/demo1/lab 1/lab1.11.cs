@@ -1,8 +1,8 @@
 using System;
 
-public class RemoveEven
+public class Lab1_11
 {
-    public static void Process()
+    public static void RemoveEven()
     {
         Console.WriteLine("Pitam Poudel");
 

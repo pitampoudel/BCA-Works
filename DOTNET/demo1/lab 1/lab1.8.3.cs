@@ -1,8 +1,8 @@
 using System;
 
-public class MergeSort
+public class Lab1_8_3
 {
-    public static void Sort(int[] array, int left, int right)
+    public static void MergeSort(int[] array, int left, int right)
     {
         if (left < right)
         {

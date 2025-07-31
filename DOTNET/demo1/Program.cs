@@ -2,8 +2,8 @@
 
 class Program
 {
-    static async Task Main()
+    static async  Main()
     {
-        await DBProgram.Execute();
+        Lab1_1.execute();
     }
 }

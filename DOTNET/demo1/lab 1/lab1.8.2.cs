@@ -1,8 +1,8 @@
 using System;
 
-public class QuickSort
+public class Lab1_8_2
 {
-    public static void Sort(int[] array, int low, int high)
+    public static void QuickSort(int[] array, int low, int high)
     {
         if (low < high)
         {

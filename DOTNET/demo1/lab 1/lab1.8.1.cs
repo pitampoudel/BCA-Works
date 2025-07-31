@@ -1,8 +1,8 @@
 using System;
 
-public class BubbleSort
+public class LAB1_8_1
 {
-    public static void Sort(int[] array)
+    public static void BubbleSort(int[] array)
     {
         Console.WriteLine("Pitam Poudel");
 

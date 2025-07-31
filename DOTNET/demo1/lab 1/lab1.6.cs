@@ -1,8 +1,8 @@
 using System;
 
-class TemperatureConverter
+class Lab1_6
 {
-    public static void ConvertTemperature()
+    public static void execute()
     {
         Console.WriteLine("Pitam Poudel");
         Console.WriteLine("Choose the conversion type:");

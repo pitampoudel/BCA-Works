@@ -1,11 +1,11 @@
 using System;
 
-public class Distance
+public class Lab1_14
 {
     public int Feet { get; set; }
     public int Inches { get; set; }
 
-    public Distance(int feet, int inches)
+    public void Distance(int feet, int inches)
     {
         Feet = feet;
         Inches = inches;

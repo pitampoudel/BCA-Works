@@ -1,6 +1,6 @@
 using System;
 
-public class QuizGame
+public class LAB1_3
 {
     public static void Play()
     {

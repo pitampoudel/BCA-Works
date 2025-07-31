@@ -1,8 +1,8 @@
 using System;
 
-class Palindrome
+class LAB1_5
 {
-    public static void CheckPalindrome()
+    public static void execute()
     {
         Console.WriteLine("Pitam Poudel");
         Console.Write("Enter a string to check if it's a palindrome: ");

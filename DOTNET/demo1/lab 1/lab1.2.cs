@@ -1,8 +1,8 @@
 using System;
 
-public class NumberOperations
+public class Lab1_2
 {
-    public static void integer()
+    public static void execute()
     {
         Console.WriteLine("Pitam Poudel");
 

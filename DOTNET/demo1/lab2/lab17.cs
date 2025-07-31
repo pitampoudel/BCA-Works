@@ -15,10 +15,10 @@ sealed class Utility
 }
 
 // This will cause a compile-time error
-class AdvancedUtility : Utility
-{
-    // Error: Cannot derive from sealed type 'Utility'
-}
+// class AdvancedUtility : Utility
+// {
+//     // Error: Cannot derive from sealed type 'Utility'
+// }
 
 class SealedClassDemo
 {

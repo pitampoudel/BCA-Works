@@ -2,7 +2,7 @@
 
 class Program
 {
-    static async  Main()
+    static void Main()
     {
         Lab1_1.execute();
     }

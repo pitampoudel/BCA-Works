@@ -1,11 +1,11 @@
 using System;
 
-public class Lab1_14
+public class Distance
 {
     public int Feet { get; set; }
     public int Inches { get; set; }
 
-    public void Distance(int feet, int inches)
+    public Distance(int feet, int inches)
     {
         Feet = feet;
         Inches = inches;
@@ -59,3 +59,11 @@ public class Lab1_14
         Console.WriteLine($"The sum of the distances is: {result}");
     }
 }
+public class Lab1_14
+{
+    public static void Execute()
+    {
+        Distance.AddDistances();
+    }
+}
+

@@ -7,8 +7,8 @@ public class Lab1_8_3
         if (left < right)
         {
             int mid = (left + right) / 2;
-            Sort(array, left, mid);
-            Sort(array, mid + 1, right);
+            MergeSort(array, left, mid);
+            MergeSort(array, mid + 1, right);
             Merge(array, left, mid, right);
         }
     }

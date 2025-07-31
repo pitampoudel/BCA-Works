@@ -7,8 +7,8 @@ public class Lab1_8_2
         if (low < high)
         {
             int pivotIndex = Partition(array, low, high);
-            Sort(array, low, pivotIndex - 1);
-            Sort(array, pivotIndex + 1, high);
+            QuickSort(array, low, pivotIndex - 1);
+            QuickSort(array, pivotIndex + 1, high);
         }
     }
 

@@ -20,13 +20,13 @@ class FixedDepositAccount : Account1
     }
 }
 
-class SpecialFixedDepositAccount : FixedDepositAccount
-{
-    public override void CalculateInterest()
-    {
-        Console.WriteLine("Attempt to override sealed method.");
-    }
-}
+// class SpecialFixedDepositAccount : FixedDepositAccount
+// {
+//     public override void CalculateInterest()
+//     {
+//         Console.WriteLine("Attempt to override sealed method.");
+//     }
+// }
 
 class SealedMethodDemo
 {

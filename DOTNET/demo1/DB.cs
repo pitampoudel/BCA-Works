@@ -1,8 +1,10 @@
+
+using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
 class DBProgram
 {
-    public static  async Task Execute()
+    public static async void Execute()
     {
         var builder = new MySqlConnectionStringBuilder
         {

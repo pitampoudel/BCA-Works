@@ -1,10 +1,9 @@
-
-using System.Threading.Tasks;
+using System;
 using MySql.Data.MySqlClient;
 
 class DBProgram
 {
-    public static async void Execute()
+    public static void Execute()
     {
         var builder = new MySqlConnectionStringBuilder
         {
@@ -16,28 +15,20 @@ class DBProgram
 
         try
         {
-            await using var connection = new MySqlConnection(builder.ConnectionString);
-            Console.WriteLine("\nMYSQL CONNECTION:");
-            Console.WriteLine("=========================================" + "\n");
+            using var connection = new MySqlConnection(builder.ConnectionString);
+            connection.Open();
 
-            await connection.OpenAsync();
-
-            // await using var command = new MySqlCommand("INSERT into test_db VALUES (1,2,3,4);", connection);
-            await using var command = new MySqlCommand("SELECT * FROM test_db;", connection);
-
-            await using var reader = await command.ExecuteReaderAsync();
-
-            while (await reader.ReadAsync())
+            string query = "SELECT * FROM users;";
+            using var command = new MySqlCommand(query, connection);
+            using var reader = command.ExecuteReader();
+            while (reader.Read())
             {
-                Console.WriteLine(reader.GetString(0));
+                Console.WriteLine(reader.GetString(1));
             }
         }
         catch (MySqlException e)
         {
             Console.WriteLine($"MySQL Error: {e.Message}");
         }
-
-        Console.WriteLine("\nDone. Press enter.");
-        Console.ReadLine();
     }
 }

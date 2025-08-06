@@ -4,6 +4,7 @@ class Program
 {
     static void Main()
     {
-        Lab1_1.execute();
+        // Lab1_1.execute();
+        DBProgram.Execute();
     }
 }

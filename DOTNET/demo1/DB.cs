@@ -13,22 +13,21 @@ class DBProgram
             Database = "dotnet_db"
         };
 
-        try
-        {
-            using var connection = new MySqlConnection(builder.ConnectionString);
-            connection.Open();
+        var connection = new MySqlConnection(builder.ConnectionString);
+        connection.Open();
 
-            string query = "SELECT * FROM users;";
-            using var command = new MySqlCommand(query, connection);
-            using var reader = command.ExecuteReader();
-            while (reader.Read())
-            {
-                Console.WriteLine(reader.GetString(1));
-            }
-        }
-        catch (MySqlException e)
+        // CREATE
+        var command1 = new MySqlCommand("INSERT INTO users(username,email,password) VALUES('Alice','','')", connection);
+        command1.ExecuteNonQuery();
+
+        // READ
+        var command2 = new MySqlCommand("SELECT * FROM users", connection);
+        var reader = command2.ExecuteReader();
+        while (reader.Read())
         {
-            Console.WriteLine($"MySQL Error: {e.Message}");
+            Console.WriteLine(reader.GetString(1));
         }
+
+
     }
 }

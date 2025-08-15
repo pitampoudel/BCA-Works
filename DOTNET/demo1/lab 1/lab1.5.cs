@@ -1,12 +1,12 @@
 using System;
 
-class LAB1_5
+class Lab1_5
 {
     public static void execute()
     {
         Console.WriteLine("Pitam Poudel");
         Console.Write("Enter a string to check if it's a palindrome: ");
-        string input = Console.ReadLine();
+        string input = Console.ReadLine() ?? string.Empty;
 
         // Remove spaces and convert to lowercase for comparison
         string processedInput = input.Replace(" ", "").ToLower();

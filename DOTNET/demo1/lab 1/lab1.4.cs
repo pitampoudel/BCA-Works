@@ -1,6 +1,6 @@
 using System;
 
-public class LAB1_4
+public class Lab1_4
 {
     public static void Play()
     {
@@ -14,7 +14,7 @@ public class LAB1_4
         while (attempts > 0)
         {
             Console.Write("\nEnter your guess: ");
-            string userGuess = Console.ReadLine();
+            string userGuess = Console.ReadLine() ?? string.Empty;
 
             if (userGuess.Equals(secretString, StringComparison.OrdinalIgnoreCase))
             {

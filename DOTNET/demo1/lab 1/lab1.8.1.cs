@@ -1,6 +1,6 @@
 using System;
 
-public class LAB1_8_1
+public class Lab1_8_1
 {
     public static void BubbleSort(int[] array)
     {

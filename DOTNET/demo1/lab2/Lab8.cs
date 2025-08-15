@@ -31,7 +31,7 @@ class SmartPrinter : Machine, IScanner
 
 class MultipleInheritance
 {
-    public static void Lab8()
+    public static void Run()
     {
         Console.WriteLine("Pitam Poudel \n");
         // Create an instance of SmartPrinter
@@ -47,4 +47,10 @@ class MultipleInheritance
 
         Console.ReadLine();
     }
+}
+
+// Wrapper class for lab2 index 8
+class Lab2_8
+{
+    public static void Run() => MultipleInheritance.Run();
 }

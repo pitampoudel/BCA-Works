@@ -60,7 +60,7 @@ class SavingsAccount : Account
 
 class AccessModifiers
 {
-    public static void Lab21()
+    public static void Run()
     {
         Console.WriteLine("Banking System - Access Modifiers Demo");
         Console.WriteLine("By Pitam Poudel\n");
@@ -88,5 +88,11 @@ class AccessModifiers
         // Call method in derived class
         sa.ShowDerivedAccess();
     }
+}
+
+// Wrapper class for lab2 index 21
+class Lab2_21
+{
+    public static void Run() => AccessModifiers.Run();
 }
 

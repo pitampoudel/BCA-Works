@@ -47,3 +47,9 @@ class HotelRoom
         hotelRoom.DisplayBookingDetails();
     }
 }
+
+// Wrapper class for lab2 index 2
+class Lab2_2
+{
+    public static void Run() => HotelRoom.Invoke();
+}

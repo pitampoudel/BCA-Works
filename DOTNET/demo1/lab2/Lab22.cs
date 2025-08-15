@@ -25,7 +25,7 @@ class Task
 
 class EnumDemo
 {
-    public static void Lab22()
+    public static void Run()
     {
         Console.WriteLine("Task Management System - Demonstrating Enum");
         Console.WriteLine("By Pitam Poudel\n");
@@ -42,5 +42,11 @@ class EnumDemo
         task3.DisplayStatus();
         task4.DisplayStatus();
     }
+}
+
+// Wrapper class for lab2 index 22
+class Lab2_22
+{
+    public static void Run() => EnumDemo.Run();
 }
 

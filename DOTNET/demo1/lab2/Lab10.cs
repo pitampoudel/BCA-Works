@@ -26,7 +26,7 @@ class BankAccounts
 
 class Methodoverloading
 {
-    public static void Lab10()
+    public static void Run()
     {
         Console.WriteLine("Pitam Poudel\n");
         BankAccounts account = new BankAccounts();
@@ -48,3 +48,10 @@ class Methodoverloading
         Console.ReadLine();
     }
 }
+
+// Wrapper class for lab2 index 10
+class Lab2_10
+{
+    public static void Run() => Methodoverloading.Run();
+}
+

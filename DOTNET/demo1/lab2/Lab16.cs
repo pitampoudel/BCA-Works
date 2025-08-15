@@ -30,7 +30,7 @@ class FixedDepositAccount : Account1
 
 class SealedMethodDemo
 {
-    public static void Lab16()
+    public static void Run()
     {
         FixedDepositAccount fda = new FixedDepositAccount();
         fda.AccountNumber = 12345;
@@ -38,4 +38,10 @@ class SealedMethodDemo
 
         Console.WriteLine("\nAttempting to override sealed method in SpecialFixedDepositAccount...");
     }
+}
+
+// Wrapper class for lab2 index 16
+class Lab2_16
+{
+    public static void Run() => SealedMethodDemo.Run();
 }

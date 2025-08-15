@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 class Queue
 {
-    public static void Lab25()
+    public static void Run()
     {
         Console.WriteLine("Customer Service Queue System");
         Console.WriteLine("By Pitam Poudel\n");
@@ -63,5 +63,11 @@ class Queue
 
         Console.WriteLine("\nAll customers have been served.");
     }
+}
+
+// Wrapper class for lab2 index 25
+class Lab2_25
+{
+    public static void Run() => Queue.Run();
 }
 

@@ -18,7 +18,7 @@ class CurrencyConverter
         return inrAmount * inrToNprRate;
     }
 
-    public static void Lab1()
+    public static void Run()
     {
         Console.WriteLine("Pitam Poudel\n");
         Console.WriteLine("Currency Converter - Convert to NPR\n");
@@ -40,4 +40,10 @@ class CurrencyConverter
 
         Console.WriteLine("\nThank you for using the Currency Converter!");
     }
+}
+
+// Wrapper class for lab2 index 1
+class Lab2_1
+{
+    public static void Run() => CurrencyConverter.Run();
 }

@@ -52,7 +52,7 @@ class BankTransferPayment : Payment
 
 class Abstractclass
 {
-    public static void Lab5()
+    public static void Run()
     {
         Console.WriteLine("Pitam Poudel");
         Console.WriteLine("Enter payment amount (Rs.):");
@@ -89,4 +89,10 @@ class Abstractclass
 
         Console.ReadLine();
     }
+}
+
+// Wrapper class for lab2 index 5
+class Lab2_5
+{
+    public static void Run() => Abstractclass.Run();
 }

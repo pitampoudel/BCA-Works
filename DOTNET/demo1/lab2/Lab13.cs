@@ -34,7 +34,7 @@ class EmailNotification : Notification
 // Main program to test runtime polymorphism
 class VirtualMethod
 {
-    public static void Lab13()
+    public static void Run()
     {
         Console.WriteLine("Pitam Poudel");
         // Creating a base class object
@@ -46,4 +46,10 @@ class VirtualMethod
         n2.Send();  // Calls overridden method (runtime polymorphism)
 
     }
+}
+
+// Wrapper class for lab2 index 13
+class Lab2_13
+{
+    public static void Run() => VirtualMethod.Run();
 }

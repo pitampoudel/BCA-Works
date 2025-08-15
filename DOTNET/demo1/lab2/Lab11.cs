@@ -74,10 +74,10 @@ class Intern : Employees
 
 class MethodOverriding
 {
-    public static void Lab11()
+    public static void Run()
     {
         Console.WriteLine("Pitam Poudel");
-        
+
         Employees[] employees = new Employees[3];
 
         Console.WriteLine("Enter Full-Time Employee details:");
@@ -120,4 +120,10 @@ class MethodOverriding
 
         Console.ReadLine();
     }
+}
+
+// Wrapper class for lab2 index 11
+class Lab2_11
+{
+    public static void Run() => MethodOverriding.Run();
 }

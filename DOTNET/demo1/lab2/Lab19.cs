@@ -33,7 +33,7 @@ namespace EmployeeManagementSystem
 
     class TypepfGetType
     {
-        public static void Lab19()
+        public static void Run()
         {
             Console.WriteLine("Employee Management System");
             Console.WriteLine("Developed by Pitam Poudel\n");
@@ -44,7 +44,7 @@ namespace EmployeeManagementSystem
             Employee emp2 = new Developer { Name = "Gita" };
 
             // Store in array
-            Employee[] employees = { emp1, emp2};
+            Employee[] employees = { emp1, emp2 };
 
             Console.WriteLine("Employee Role Report:\n");
 
@@ -60,5 +60,11 @@ namespace EmployeeManagementSystem
                 Console.WriteLine(new string('-', 30));
             }
         }
+    }
+
+    // Wrapper class for lab2 index 19
+    class Lab2_19
+    {
+        public static void Run() => TypepfGetType.Run();
     }
 }

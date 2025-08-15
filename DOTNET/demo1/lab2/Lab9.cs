@@ -42,7 +42,7 @@ class Student : Persons
 
 class Thisbase
 {
-    public static void Lab9()
+    public static void Run()
     {
         Console.Write("Enter student name: ");
         string name = Console.ReadLine();
@@ -60,4 +60,10 @@ class Thisbase
 
         Console.ReadLine();
     }
+}
+
+// Wrapper class for lab2 index 9
+class Lab2_9
+{
+    public static void Run() => Thisbase.Run();
 }

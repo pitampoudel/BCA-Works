@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 class ListExample
 {
-    public static void Lab27()
+    public static void Run()
     {
         List<string> books = new List<string>();
 
@@ -109,4 +109,10 @@ class ListExample
             }
         }
     }
+}
+
+// Wrapper class for lab2 index 27
+class Lab2_27
+{
+    public static void Run() => ListExample.Run();
 }

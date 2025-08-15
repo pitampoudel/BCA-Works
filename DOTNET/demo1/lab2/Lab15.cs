@@ -41,7 +41,7 @@ namespace EducationalSystem
 
     class IsandAs
     {
-        public static void Lab15()
+        public static void Run()
         {
             Console.WriteLine("Pitam Poudel");
 
@@ -91,5 +91,11 @@ namespace EducationalSystem
                 Console.WriteLine(); // For spacing
             }
         }
+    }
+
+    // Wrapper class for lab2 index 15
+    class Lab2_15
+    {
+        public static void Run() => IsandAs.Run();
     }
 }

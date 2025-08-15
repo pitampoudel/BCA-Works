@@ -37,7 +37,7 @@ class ElectricCar : Car
 
 class Multiinheritance
 {
-    public static void Lab6()
+    public static void Run()
     {
         // Create an ElectricCar object
         ElectricCar myEV = new ElectricCar();
@@ -59,5 +59,11 @@ class Multiinheritance
         Console.WriteLine("\n Electric Car Info ");
         myEV.ElectricCarBatteryInfo();
     }
+}
+
+// Wrapper class for lab2 index 6
+class Lab2_6
+{
+    public static void Run() => Multiinheritance.Run();
 }
 

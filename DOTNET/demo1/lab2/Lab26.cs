@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 class StackExample
 {
-    public static void Lab26()
+    public static void Run()
     {
         Console.WriteLine("Browser History System using Stack");
         Console.WriteLine("By Pitam Poudel\n");
@@ -72,5 +72,11 @@ class StackExample
             Console.WriteLine("Browsing history is empty.");
         }
     }
+}
+
+// Wrapper class for lab2 index 26
+class Lab2_26
+{
+    public static void Run() => StackExample.Run();
 }
 

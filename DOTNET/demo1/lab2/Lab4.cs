@@ -39,7 +39,7 @@ class Person1
         Console.WriteLine("Age: " + age);
         Console.WriteLine("Address: " + address);
     }
-    public static void Lab4()
+    public static void Run()
     {
         Console.WriteLine("Pitam Poudel");
         // Ask user for input
@@ -62,4 +62,10 @@ class Person1
 
         Console.ReadLine();
     }
+}
+
+// Wrapper class for lab2 index 4
+class Lab2_4
+{
+    public static void Run() => Person1.Run();
 }

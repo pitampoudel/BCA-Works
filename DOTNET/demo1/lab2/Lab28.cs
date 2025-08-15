@@ -3,7 +3,7 @@ using System.Collections;
 
 class ArrayListExample
 {
-    public static void Lab28()
+    public static void Run()
     {
         ArrayList movies = new ArrayList();
 
@@ -108,4 +108,10 @@ class ArrayListExample
             Console.WriteLine($"{i + 1}. {movies[i]}");
         }
     }
+}
+
+// Wrapper class for lab2 index 28
+class Lab2_28
+{
+    public static void Run() => ArrayListExample.Run();
 }

@@ -22,7 +22,7 @@ struct Position
 
 class Structexample
 {
-    public static void Lab20()
+    public static void Run()
     {
         Console.WriteLine(" Pitam Poudel\n");
         Console.WriteLine("Point of Sale (POS) System");
@@ -52,5 +52,11 @@ class Structexample
             items[i].Display();
         }
     }
+}
+
+// Wrapper class for lab2 index 20
+class Lab2_20
+{
+    public static void Run() => Structexample.Run();
 }
 

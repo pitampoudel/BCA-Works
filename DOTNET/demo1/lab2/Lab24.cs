@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 class Dictionary
 {
-    public static void Lab24()
+    public static void Run()
     {
         Console.WriteLine("Student Grade Management System");
         Console.WriteLine("By Pitam Poudel\n");
@@ -43,5 +43,11 @@ class Dictionary
             Console.WriteLine($"Name: {entry.Key}, Grade: {entry.Value}");
         }
     }
+}
+
+// Wrapper class for lab2 index 24
+class Lab2_24
+{
+    public static void Run() => Dictionary.Run();
 }
 

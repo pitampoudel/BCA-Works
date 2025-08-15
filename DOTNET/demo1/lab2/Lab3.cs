@@ -60,7 +60,7 @@ class BankAccount
         Console.WriteLine($"Account Type   : {accountType}");
         Console.WriteLine($"Current Balance: {balance}");
     }
-    public static void Lab3()
+    public static void Run()
     {
         Console.WriteLine("Pitam Poudel \n");
         BankAccount account = new BankAccount();
@@ -92,4 +92,10 @@ class BankAccount
 
         account.Display();
     }
+}
+
+// Wrapper class for lab2 index 3
+class Lab2_3
+{
+    public static void Run() => BankAccount.Run();
 }

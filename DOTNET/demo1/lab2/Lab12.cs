@@ -32,7 +32,7 @@ class Box
 
 class Operatoroverloading
 {
-    public static void Lab12()
+    public static void Run()
     {
         Console.WriteLine("Pitam Poudel");
         // Ask user for input for Box 1
@@ -66,4 +66,10 @@ class Operatoroverloading
         Console.WriteLine("\nAfter adding both boxes:");
         box3.DisplayVolume();
     }
+}
+
+// Wrapper class for lab2 index 12
+class Lab2_12
+{
+    public static void Run() => Operatoroverloading.Run();
 }

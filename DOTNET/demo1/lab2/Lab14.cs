@@ -34,7 +34,7 @@ class Doctor : Person
 
 class Updowncasting
 {
-    public static void Lab14()
+    public static void Run()
     {
         Console.WriteLine("Pitam Poudel");
         // Ask the user for input
@@ -59,4 +59,10 @@ class Updowncasting
 
         Console.ReadLine();
     }
+}
+
+// Wrapper class for lab2 index 14
+class Lab2_14
+{
+    public static void Run() => Updowncasting.Run();
 }

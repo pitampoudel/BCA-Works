@@ -32,7 +32,7 @@ class Product
 
 class GenericsDemo
 {
-    public static void Lab23()
+    public static void Run()
     {
         Console.WriteLine("Generic Data Storage");
         Console.WriteLine("By Pitam Poudel\n");
@@ -61,5 +61,11 @@ class GenericsDemo
         productStorage.SetItem(product);
         Console.WriteLine("Stored Product: " + productStorage.GetItem());
     }
+}
+
+// Wrapper class for lab2 index 23
+class Lab2_23
+{
+    public static void Run() => GenericsDemo.Run();
 }
 

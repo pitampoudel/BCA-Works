@@ -50,7 +50,7 @@ class Developer : Employee
 
 class MultiLevelInheritance
 {
-    public static void Lab7()
+    public static void Run()
     {
         Console.WriteLine("Pitam Poudel multi level cooperation\n");
         // Input for Manager
@@ -81,5 +81,11 @@ class MultiLevelInheritance
         Console.WriteLine("\n--- Developer Info ---");
         dev.DisplayDeveloperInfo();
     }
+}
+
+// Wrapper class for lab2 index 7
+class Lab2_7
+{
+    public static void Run() => MultiLevelInheritance.Run();
 }
 

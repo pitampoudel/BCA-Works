@@ -22,10 +22,16 @@ sealed class Utility
 
 class SealedClassDemo
 {
-    public static void Lab17()
+    public static void Run()
     {
         Utility util = new Utility();
         util.ShowMessage("Welcome to the system!");
         util.Log("System initialized successfully.");
     }
+}
+
+// Wrapper class for lab2 index 17
+class Lab2_17
+{
+    public static void Run() => SealedClassDemo.Run();
 }

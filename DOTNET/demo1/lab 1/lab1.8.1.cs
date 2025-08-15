@@ -21,4 +21,9 @@ public class Lab1_8_1
         }
         Console.WriteLine("Bubble Sorted Array: " + string.Join(", ", array));
     }
+
+    public static void Run()
+    {
+        BubbleSort(new int[] { 5, 2, 9, 1, 5 });
+    }
 }

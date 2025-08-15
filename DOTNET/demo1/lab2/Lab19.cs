@@ -1,6 +1,6 @@
 using System;
 
-namespace EmployeeManagementSystem
+class Lab2_19
 {
     // Base class
     class Employee
@@ -62,9 +62,7 @@ namespace EmployeeManagementSystem
         }
     }
 
-    // Wrapper class for lab2 index 19
-    class Lab2_19
-    {
-        public static void Run() => TypepfGetType.Run();
-    }
+
+    public static void Run() => TypepfGetType.Run();
+
 }

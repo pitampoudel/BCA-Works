@@ -34,4 +34,6 @@ class Lab1_5
         }
         return new string(reversed);
     }
+
+    public static void Run() => execute();
 }

@@ -37,4 +37,7 @@ public class Lab1_10
 
         return true;
     }
+
+    // Uniform entrypoint
+    public static void Run() => CalculatePrimeSum();
 }

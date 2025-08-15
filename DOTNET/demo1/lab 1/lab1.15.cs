@@ -36,4 +36,6 @@ public class Lab1_15
         Console.WriteLine($"Sum of {a} and {b}: {sum}");
         Console.WriteLine($"Product of {a} and {b}: {product}");
     }
+
+    public static void Run() => RefOutDemo();
 }

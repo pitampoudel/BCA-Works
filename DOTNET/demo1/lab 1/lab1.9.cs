@@ -23,4 +23,6 @@ public class Lab1_9
 
         Console.WriteLine($"The factorial of {number} is: {factorial}");
     }
+
+    public static void Run() => CalculateFactorial();
 }

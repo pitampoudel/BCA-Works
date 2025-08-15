@@ -25,4 +25,6 @@ public class Lab1_1
         Console.WriteLine($"Product: {product}");
         Console.WriteLine($"Average: {average:F2}");
     }
+
+    public static void Run() => execute();
 }

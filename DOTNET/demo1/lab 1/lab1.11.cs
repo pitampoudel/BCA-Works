@@ -29,4 +29,5 @@ public class Lab1_11
         }
         Console.WriteLine();
     }
+    public static void Run() => RemoveEven();
 }

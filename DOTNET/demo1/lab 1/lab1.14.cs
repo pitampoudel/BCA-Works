@@ -65,5 +65,7 @@ public class Lab1_14
     {
         Distance.AddDistances();
     }
+
+    public static void Run() => Execute();
 }
 

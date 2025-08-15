@@ -1,6 +1,6 @@
 using System;
 
-namespace EducationalSystem
+class Lab2_15
 {
     // Base class
     class Person3
@@ -93,9 +93,7 @@ namespace EducationalSystem
         }
     }
 
-    // Wrapper class for lab2 index 15
-    class Lab2_15
-    {
+ 
         public static void Run() => IsandAs.Run();
-    }
+    
 }

@@ -37,4 +37,7 @@ public class Lab1_12
         string joinedString = string.Join("-", words);
         Console.WriteLine($"Join: {joinedString}");
     }
+
+    // Uniform entrypoint
+    public static void Run() => StringMethods();
 }

@@ -57,4 +57,11 @@ public class Lab1_8_3
             k++;
         }
     }
+
+    public static void Run()
+    {
+        int[] a = new int[] { 6, 2, 4, 9, 1 };
+        MergeSort(a, 0, a.Length - 1);
+        Console.WriteLine("Merge Sorted Array: " + string.Join(", ", a));
+    }
 }

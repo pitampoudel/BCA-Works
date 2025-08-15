@@ -52,4 +52,6 @@ class Lab1_6
             Console.WriteLine("Invalid input. Please enter a valid number.");
         }
     }
+
+    public static void Run() => execute();
 }

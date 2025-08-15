@@ -30,4 +30,6 @@ public class Lab1_4
 
         Console.WriteLine("\nSorry, you've used all your attempts. The secret string was: " + secretString);
     }
+
+    public static void Run() => Play();
 }

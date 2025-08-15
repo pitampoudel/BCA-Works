@@ -29,4 +29,7 @@ public class Lab1_13
             Console.WriteLine("Division operation completed.");
         }
     }
+
+    // Uniform entrypoint
+    public static void Run() => HandleDivideByZero();
 }

@@ -77,4 +77,6 @@ class Lab1_7
             Console.WriteLine();
         }
     }
+
+    public static void Run() => execute();
 }

@@ -2,33 +2,32 @@ using System;
 
 public class Lab1_4
 {
+    // Simple Fibonacci series generator
     public static void Play()
     {
-        Console.WriteLine("Pitam Poudel");
-        string secretString = "Pitam";
-        int attempts = 3;
+        Console.WriteLine("Fibonacci Series Generator");
+        Console.Write("Enter the number of terms to generate (positive integer): ");
+        string? input = Console.ReadLine();
 
-        Console.WriteLine("Welcome to the Guess the Secret String Game!");
-        Console.WriteLine($"You have {attempts} attempts to guess the secret string.");
-
-        while (attempts > 0)
+        if (!int.TryParse(input, out int n) || n <= 0)
         {
-            Console.Write("\nEnter your guess: ");
-            string userGuess = Console.ReadLine() ?? string.Empty;
-
-            if (userGuess.Equals(secretString, StringComparison.OrdinalIgnoreCase))
-            {
-                Console.WriteLine("Congratulations! You guessed the secret string correctly!");
-                return;
-            }
-            else
-            {
-                attempts--;
-                Console.WriteLine($"Wrong guess. You have {attempts} attempts left.");
-            }
+            Console.WriteLine("Invalid input. Please enter a positive integer.");
+            return;
         }
 
-        Console.WriteLine("\nSorry, you've used all your attempts. The secret string was: " + secretString);
+        Console.WriteLine($"First {n} term(s) of the Fibonacci series:");
+
+        long a = 0, b = 1;
+        for (int i = 1; i <= n; i++)
+        {
+            Console.Write(a);
+            if (i < n) Console.Write(", ");
+            long next = a + b;
+            a = b;
+            b = next;
+        }
+
+        Console.WriteLine();
     }
 
     public static void Run() => Play();

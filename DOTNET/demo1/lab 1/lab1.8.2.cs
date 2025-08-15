@@ -37,7 +37,8 @@ public class Lab1_8_2
 
     public static void Run()
     {
-        int[] a = new int[] { 7, 3, 8, 4, 2 };
+        int[] a = [7, 3, 8, 4, 2];
+        Console.WriteLine("Array: " + string.Join(", ", a));
         QuickSort(a, 0, a.Length - 1);
         Console.WriteLine("Quick Sorted Array: " + string.Join(", ", a));
     }

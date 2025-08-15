@@ -5,6 +5,7 @@ public class Lab1_8_1
     public static void BubbleSort(int[] array)
     {
         Console.WriteLine("Pitam Poudel");
+        Console.WriteLine("Array: " + string.Join(", ", array));
 
         int n = array.Length;
         for (int i = 0; i < n - 1; i++)

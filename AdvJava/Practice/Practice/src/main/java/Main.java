@@ -1,3 +1,5 @@
+import graphics.JFrameExample;
+
 import java.util.Scanner;
 
 public class Main {

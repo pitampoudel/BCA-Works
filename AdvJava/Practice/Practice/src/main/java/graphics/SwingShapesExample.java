@@ -12,7 +12,7 @@ public class SwingShapesExample {
             int panelHeight = getHeight();
 
             // Draw circle
-            int outerShapeSize = (int) (Math.min(panelWidth, panelHeight) / 1.5);
+            int outerShapeSize = Math.min(panelWidth, panelHeight) / 2;
             int outerShapeXPosition = (panelWidth - outerShapeSize) / 2;
             int outerShapeYPosition = (panelHeight - outerShapeSize) / 2;
             graphics.setColor(Color.GRAY);
@@ -20,24 +20,21 @@ public class SwingShapesExample {
 
 
             // Draw rectangle
-            int innerShapeSize = Math.min(panelWidth, panelHeight) / 2;
-            int rectangleXPosition = (panelWidth - innerShapeSize) / 2;
-            int rectangleYPosition = (panelHeight - innerShapeSize) / 2;
+            int innerShapeSize = (int) (outerShapeSize / Math.sqrt(2));
+            int innerShapeXPosition = outerShapeXPosition + (outerShapeSize - innerShapeSize) / 2;
+            int innerShapeYPosition = outerShapeYPosition + (outerShapeSize - innerShapeSize) / 2;
             graphics.setColor(Color.WHITE);
-            graphics.fillRect(rectangleXPosition, rectangleYPosition, innerShapeSize, innerShapeSize);
-
+            graphics.fillRect(innerShapeXPosition, innerShapeYPosition, innerShapeSize, innerShapeSize);
 
             // Draw circle
-            int circleXPosition = (panelWidth - innerShapeSize) / 2;
-            int circleYPosition = (panelHeight - innerShapeSize) / 2;
             graphics.setColor(Color.lightGray);
-            graphics.fillOval(circleXPosition, circleYPosition, innerShapeSize, innerShapeSize);
+            graphics.fillOval(innerShapeXPosition, innerShapeYPosition, innerShapeSize, innerShapeSize);
 
             // diagonal
             graphics.setColor(Color.BLACK);
-            graphics.drawLine(rectangleXPosition, rectangleYPosition,
-                    rectangleXPosition + innerShapeSize,
-                    rectangleYPosition + innerShapeSize);
+            graphics.drawLine(innerShapeXPosition, innerShapeYPosition,
+                    innerShapeXPosition + innerShapeSize,
+                    innerShapeYPosition + innerShapeSize);
         }
     }
 

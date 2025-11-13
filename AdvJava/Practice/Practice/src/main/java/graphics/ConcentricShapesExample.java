@@ -3,7 +3,7 @@ package graphics;
 import javax.swing.*;
 import java.awt.*;
 
-public class SwingShapesExample {
+public class ConcentricShapesExample {
     public static class ShapesPanel extends JPanel {
         @Override
         protected void paintComponent(Graphics graphics) {

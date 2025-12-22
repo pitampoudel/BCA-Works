@@ -30,6 +30,11 @@ public class LoginPageExample {
         passwordPanel.add(password);
         panel.add(passwordPanel);
 
+
+        DB db = new DB();
+        db.connect();
+        db.validateUser(username.getText(), new String(password.getPassword()));
+
         frame.add(panel);
         frame.setVisible(true);
     }

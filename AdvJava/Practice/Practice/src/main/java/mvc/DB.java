@@ -20,12 +20,11 @@ public class DB {
 
     public void validateUser(String username, String password) throws SQLException {
         String query = "SELECT * FROM users WHERE username = ? AND password = ?";
-        try (PreparedStatement stmt = connection.prepareStatement(query)) {
-            stmt.setString(1, username);
-            stmt.setString(2, password);
-            try (ResultSet rs = stmt.executeQuery()) {
-                rs.next();
-            }
+        PreparedStatement stmt = connection.prepareStatement(query);
+        stmt.setString(1, username);
+        stmt.setString(2, password);
+        try (ResultSet rs = stmt.executeQuery()) {
+            rs.next();
         }
     }
 
@@ -34,7 +33,7 @@ public class DB {
         PreparedStatement stmt = connection.prepareStatement(query);
         stmt.setString(1, username);
         stmt.setString(2, password);
-        int k = stmt.executeUpdate(Statement.RETURN_GENERATED_KEYS);
+        int k = stmt.executeUpdate(String.valueOf(Statement.RETURN_GENERATED_KEYS));
 
     }
 

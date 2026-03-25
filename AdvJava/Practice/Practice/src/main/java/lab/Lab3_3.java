@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class Lab1_17 extends JFrame {
+public class Lab3_3 extends JFrame {
 
     JLabel imageLabel;
     String[] images = {
@@ -15,7 +15,7 @@ public class Lab1_17 extends JFrame {
     };
     int index = 0;
 
-    public Lab1_17() {
+    public Lab3_3() {
 
         setTitle("Photo Viewer");
         setSize(400, 400);
@@ -50,6 +50,6 @@ public class Lab1_17 extends JFrame {
 
     public static void main(String[] args) {
 
-        new Lab1_17();
+        new Lab3_3();
     }
 }

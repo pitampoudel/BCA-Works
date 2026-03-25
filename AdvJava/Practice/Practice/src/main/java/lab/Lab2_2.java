@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Lab1_9 {
+public class Lab2_2 {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Hobby Picker");
         frame.setSize(350, 250);

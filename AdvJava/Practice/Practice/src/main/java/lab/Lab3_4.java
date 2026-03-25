@@ -6,9 +6,9 @@ import java.awt.geom.AffineTransform;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Lab1_18 extends JFrame {
+public class Lab3_4 extends JFrame {
 
-    public Lab1_18() {
+    public Lab3_4() {
         setTitle("Image Transform");
         setSize(700, 550);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -95,6 +95,6 @@ public class Lab1_18 extends JFrame {
 
     public static void main(String[] args) {
 
-        new Lab1_18();
+        new Lab3_4();
     }
 }

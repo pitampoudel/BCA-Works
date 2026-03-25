@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Lab1_11 {
+public class Lab2_4 {
     public static void main(String[] args) {
         // Create frame
         JFrame frame = new JFrame("Event Registration");

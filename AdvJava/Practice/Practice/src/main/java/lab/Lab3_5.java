@@ -5,9 +5,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Lab1_19 extends JFrame {
+public class Lab3_5 extends JFrame {
 
-    public Lab1_19() {
+    public Lab3_5() {
 
         setTitle("Registration Form");
         setSize(400, 250);
@@ -37,7 +37,7 @@ public class Lab1_19 extends JFrame {
         submitBtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 JOptionPane.showMessageDialog(
-                        Lab1_19.this,
+                        Lab3_5.this,
                         "Data entered successfully",
                         "Success",
                         JOptionPane.INFORMATION_MESSAGE
@@ -85,6 +85,6 @@ public class Lab1_19 extends JFrame {
 
     public static void main(String[] args) {
 
-        new Lab1_19();
+        new Lab3_5();
     }
 }

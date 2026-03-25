@@ -3,7 +3,7 @@ package lab;
 import javax.swing.*;
 import java.awt.event.ActionListener;
 
-public class Lab1_8 {
+public class Lab2_1 {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Gender Selection");
         frame.setSize(300, 180);

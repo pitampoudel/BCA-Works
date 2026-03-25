@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Lab1_12 {
+public class Lab2_5 {
     public static void main(String[] args) {
         // Create frame
         JFrame frame = new JFrame("Button Click Demo");

@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class Lab1_15 {
+public class Lab3_1 {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Fun Drawing Tool");
         frame.setSize(400, 400);

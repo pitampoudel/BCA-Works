@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.regex.Pattern;
 
-public class Lab1_25 extends JFrame {
+public class Lab4_7 extends JFrame {
 
     // Form components
     private JTextField txtName, txtEmail;
@@ -14,7 +14,7 @@ public class Lab1_25 extends JFrame {
     private JCheckBox cbReading, cbSports, cbMusic;
     private JButton btnSubmit, btnClear;
 
-    public Lab1_25() {
+    public Lab4_7() {
 
         // JFrame settings
         setTitle("Student Registration System");
@@ -189,7 +189,7 @@ public class Lab1_25 extends JFrame {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            new Lab1_25().setVisible(true);
+            new Lab4_7().setVisible(true);
         });
     }
 }

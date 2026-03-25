@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.net.URL;
 
-public class Lab1_16 {
+public class Lab3_2 {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Theme Wallpaper Changer");
         frame.setSize(500, 400);
@@ -35,7 +35,7 @@ public class Lab1_16 {
         // Function to update image
         Runnable updateImage = () -> {
             // Use this class to load resources (ImageSwitcher was not defined)
-            URL url = Lab1_16.class.getResource(images[index[0]]);
+            URL url = Lab3_2.class.getResource(images[index[0]]);
             if (url == null) {
                 // resource not found - show text and clear icon to avoid NPE
                 imageLabel.setText("Image not found: " + images[index[0]]);

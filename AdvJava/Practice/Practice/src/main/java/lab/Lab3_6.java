@@ -2,7 +2,7 @@ package lab;
 
 import javax.swing.*;
 
-public class Lab1_20 {
+public class Lab3_6 {
     public static void main(String[] args) {
         // Create a frame
         JFrame frame = new JFrame("Notes App");

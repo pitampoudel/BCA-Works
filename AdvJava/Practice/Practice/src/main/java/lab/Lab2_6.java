@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class Lab1_13 {
+public class Lab2_6 {
     public static void main(String[] args) {
         // Create frame
         JFrame frame = new JFrame("Interactive Banner");

@@ -4,13 +4,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Lab1_24 extends JFrame implements ActionListener {
+public class Lab4_6 extends JFrame implements ActionListener {
 
     JTextField display;
     double firstNumber = 0;
     String operator = "";
 
-    public Lab1_24() {
+    public Lab4_6() {
 
         setTitle("Calculator");
         setSize(320, 420);
@@ -105,6 +105,6 @@ public class Lab1_24 extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        new Lab1_24();
+        new Lab4_6();
     }
 }

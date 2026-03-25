@@ -5,7 +5,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
 
-public class Lab1_21 {
+public class Lab3_7 {
     public static void main(String[] args) {
         // Create frame
         JFrame frame = new JFrame("Color Picker");

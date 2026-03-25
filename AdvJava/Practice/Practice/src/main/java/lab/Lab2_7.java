@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
-public class Lab1_14{
+public class Lab2_7{
     public static void main(String[] args) {
         // Create frame
         JFrame frame = new JFrame("Notification Preferences");

@@ -3,7 +3,7 @@ package lab;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class Lab1_23 {
+public class Lab4_5 {
     public static void main(String[] args) {
         // Create frame
         JFrame frame = new JFrame("Document Editor");

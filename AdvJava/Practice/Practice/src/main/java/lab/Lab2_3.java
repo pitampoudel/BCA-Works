@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Lab1_10 {
+public class Lab2_3 {
     public static void main(String[] args) {
         JFrame frame = new JFrame("IT Club Tutorial App");
         frame.setSize(350, 200);

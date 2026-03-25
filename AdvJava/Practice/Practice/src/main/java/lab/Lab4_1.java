@@ -46,7 +46,7 @@ public class Lab4_1 {
     public static void main(String[] args) {
         EmployeeBean1 emp = new EmployeeBean1();
         emp.setEmployeeId(101);
-        emp.setName("Saudeep Adhikari");
+        emp.setName("Pitam Poudel");
         emp.setDepartment("IT");
         emp.setSalary(55555000);
 

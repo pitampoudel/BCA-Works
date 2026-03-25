@@ -1,28 +1,29 @@
 package lab;
 
 import javax.swing.*;
+import java.awt.*;
+
 // Qn. Hobby Picker: Preference Collection Tool
 public class Lab2_2 {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Hobby Picker");
-        frame.setSize(350, 250);
+        frame.setSize(360, 240);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(null);
+        frame.setLayout(new BorderLayout());
 
         JCheckBox reading = new JCheckBox("Reading");
-        reading.setBounds(50, 40, 100, 20);
         JCheckBox sports = new JCheckBox("Sports");
-        sports.setBounds(50, 70, 100, 20);
         JCheckBox music = new JCheckBox("Music");
-        music.setBounds(50, 100, 100, 20);
         JCheckBox traveling = new JCheckBox("Traveling");
-        traveling.setBounds(50, 130, 100, 20);
 
         JButton submitButton = new JButton("Submit");
-        submitButton.setBounds(50, 160, 100, 25);
-
         JLabel resultLabel = new JLabel("Your selected hobbies: ");
-        resultLabel.setBounds(50, 190, 300, 20);
+        JPanel center = new JPanel(new GridLayout(5, 1));
+        center.add(reading);
+        center.add(sports);
+        center.add(music);
+        center.add(traveling);
+        center.add(submitButton);
 
         submitButton.addActionListener(e -> {
             StringBuilder hobbies = new StringBuilder();
@@ -40,12 +41,8 @@ public class Lab2_2 {
             resultLabel.setText("Your selected hobbies: " + hobbies);
         });
 
-        frame.add(reading);
-        frame.add(sports);
-        frame.add(music);
-        frame.add(traveling);
-        frame.add(submitButton);
-        frame.add(resultLabel);
+        frame.add(center, BorderLayout.CENTER);
+        frame.add(resultLabel, BorderLayout.SOUTH);
         frame.setVisible(true);
     }
 }

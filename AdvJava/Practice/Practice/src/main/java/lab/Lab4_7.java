@@ -31,11 +31,9 @@ public class Lab4_7 extends JFrame {
         menuBar.add(menuFile);
         setJMenuBar(menuBar);
 
-        JPanel topPanel = new JPanel();
         JLabel titleLabel = new JLabel("Student Registration System", SwingConstants.CENTER);
         titleLabel.setFont(new Font("Arial", Font.BOLD, 18));
-        topPanel.add(titleLabel);
-        add(topPanel, BorderLayout.NORTH);
+        add(titleLabel, BorderLayout.NORTH);
 
         JPanel formPanel = new JPanel(new GridLayout(5, 2, 10, 10));
         formPanel.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
@@ -84,9 +82,7 @@ public class Lab4_7 extends JFrame {
     }
 
     private void submitForm() {
-        String name = txtName.getText().trim();
-        String email = txtEmail.getText().trim();
-        String address = txtAddress.getText().trim();
+        String name = txtName.getText().trim(), email = txtEmail.getText().trim(), address = txtAddress.getText().trim();
 
         if (name.isEmpty()) {
             showError("Name is required.");
@@ -126,16 +122,14 @@ public class Lab4_7 extends JFrame {
         }
         hobbies.setLength(hobbies.length() - 2);
 
-        String summary =
-                "Student Registration Summary\n\n" +
-                        "Name: " + name + "\n" +
-                        "Email: " + email + "\n" +
-                        "Address: " + address + "\n" +
-                        "Gender: " + gender + "\n" +
-                        "Hobbies: " + hobbies;
+        String summary = "Student Registration Summary\n\n"
+                + "Name: " + name + "\n"
+                + "Email: " + email + "\n"
+                + "Address: " + address + "\n"
+                + "Gender: " + gender + "\n"
+                + "Hobbies: " + hobbies;
 
-        JOptionPane.showMessageDialog(this, summary,
-                "Registration Successful", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, summary, "Registration Successful", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private void clearForm() {
@@ -155,8 +149,7 @@ public class Lab4_7 extends JFrame {
     }
 
     private void showError(String message) {
-        JOptionPane.showMessageDialog(this, message,
-                "Input Error", JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showMessageDialog(this, message, "Input Error", JOptionPane.ERROR_MESSAGE);
     }
 
     public static void main(String[] args) {

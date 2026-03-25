@@ -9,26 +9,19 @@ public class Lab3_7 {
         JFrame frame = new JFrame("Color Picker");
         frame.setSize(400, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(null);
+        frame.setLayout(new BorderLayout());
 
         JPanel colorPanel = new JPanel();
-        colorPanel.setBounds(50, 50, 300, 100);
         colorPanel.setBackground(Color.BLACK);
+        colorPanel.setPreferredSize(new Dimension(300, 120));
 
         JSlider redSlider = new JSlider(0, 255, 0);
-        redSlider.setBounds(50, 170, 300, 40);
-        redSlider.setPaintTicks(true);
-        redSlider.setPaintLabels(true);
-
         JSlider greenSlider = new JSlider(0, 255, 0);
-        greenSlider.setBounds(50, 220, 300, 40);
-        greenSlider.setPaintTicks(true);
-        greenSlider.setPaintLabels(true);
-
         JSlider blueSlider = new JSlider(0, 255, 0);
-        blueSlider.setBounds(50, 270, 300, 40);
-        blueSlider.setPaintTicks(true);
-        blueSlider.setPaintLabels(true);
+        for (JSlider s : new JSlider[]{redSlider, greenSlider, blueSlider}) {
+            s.setPaintTicks(true);
+            s.setPaintLabels(true);
+        }
 
         Runnable updateColor = () -> {
             int r = redSlider.getValue();
@@ -41,10 +34,13 @@ public class Lab3_7 {
         greenSlider.addChangeListener(e -> updateColor.run());
         blueSlider.addChangeListener(e -> updateColor.run());
 
-        frame.add(colorPanel);
-        frame.add(redSlider);
-        frame.add(greenSlider);
-        frame.add(blueSlider);
+        JPanel sliders = new JPanel(new GridLayout(3, 1));
+        sliders.add(redSlider);
+        sliders.add(greenSlider);
+        sliders.add(blueSlider);
+
+        frame.add(colorPanel, BorderLayout.NORTH);
+        frame.add(sliders, BorderLayout.CENTER);
         frame.setVisible(true);
     }
 }

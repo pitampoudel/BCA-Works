@@ -7,20 +7,18 @@ import java.awt.*;
 public class Lab4_4 {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Traffic Light Simulator");
-        frame.setSize(300, 300);
+        frame.setSize(320, 260);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(null);
+        frame.setLayout(new BorderLayout());
 
         JPanel lightPanel = new JPanel();
-        lightPanel.setBounds(100, 50, 100, 100);
+        lightPanel.setPreferredSize(new Dimension(100, 100));
         lightPanel.setBackground(Color.GRAY);
 
         JRadioButton redButton = new JRadioButton("Red");
-        redButton.setBounds(20, 170, 80, 30);
         JRadioButton yellowButton = new JRadioButton("Yellow");
-        yellowButton.setBounds(100, 170, 80, 30);
         JRadioButton greenButton = new JRadioButton("Green");
-        greenButton.setBounds(180, 170, 80, 30);
+        JPanel buttons = new JPanel(new FlowLayout());
 
         ButtonGroup group = new ButtonGroup();
         group.add(redButton);
@@ -41,10 +39,12 @@ public class Lab4_4 {
         yellowButton.addActionListener(e -> updateColor.run());
         greenButton.addActionListener(e -> updateColor.run());
 
-        frame.add(lightPanel);
-        frame.add(redButton);
-        frame.add(yellowButton);
-        frame.add(greenButton);
+        buttons.add(redButton);
+        buttons.add(yellowButton);
+        buttons.add(greenButton);
+
+        frame.add(lightPanel, BorderLayout.CENTER);
+        frame.add(buttons, BorderLayout.SOUTH);
         frame.setVisible(true);
     }
 }

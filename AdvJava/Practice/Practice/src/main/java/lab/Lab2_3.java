@@ -1,22 +1,18 @@
 package lab;
 
 import javax.swing.*;
+import java.awt.*;
+
 // Qn. Dialog Demonstrator: IT Club Tutorial App.
 public class Lab2_3 {
     public static void main(String[] args) {
         JFrame frame = new JFrame("IT Club Tutorial App");
-        frame.setSize(350, 200);
+        frame.setSize(420, 140);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(null);
-
         JButton messageButton = new JButton("Message Dialog");
-        messageButton.setBounds(50, 50, 130, 25);
-
         JButton confirmButton = new JButton("Confirmation Dialog");
-        confirmButton.setBounds(50, 85, 170, 25);
-
         JButton inputButton = new JButton("Input Dialog");
-        inputButton.setBounds(50, 120, 130, 25);
+        frame.setLayout(new FlowLayout());
 
         messageButton.addActionListener(e ->
                 JOptionPane.showMessageDialog(frame, "This is a message dialog, thank you for clicking it!")

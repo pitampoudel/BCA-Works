@@ -37,8 +37,6 @@ class SmileyPanel extends JPanel {
         super.paintComponent(g);
         if (x >= 0 && y >= 0) {
             g.setColor(Color.YELLOW);
-            g.fillOval(x - 50, y - 50, 100, 100);
-            g.setColor(Color.BLACK);
             g.fillOval(x - 25, y - 20, 15, 15);
             g.fillOval(x + 10, y - 20, 15, 15);
             g.drawArc(x - 25, y, 50, 25, 0, -180);

@@ -36,7 +36,7 @@ public class Lab3_4 extends JFrame {
         setVisible(true);
     }
 
-    class ImagePanel extends JPanel {
+    static class ImagePanel extends JPanel {
         private final Image image = new ImageIcon(getClass().getResource("/images/image1.jpg")).getImage();
         private double angle = 0;
         private double zoom = 1.0;

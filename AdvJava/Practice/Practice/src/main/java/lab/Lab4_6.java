@@ -8,8 +8,8 @@ import java.awt.event.ActionListener;
 // Qn. Basic Calculator with GUI
 public class Lab4_6 extends JFrame implements ActionListener {
     private final JTextField display = new JTextField();
-    private double firstNumber = 0;
-    private String operator = "";
+    private double first = 0;
+    private String op = "";
 
     public Lab4_6() {
         setTitle("Calculator");
@@ -30,7 +30,7 @@ public class Lab4_6 extends JFrame implements ActionListener {
                 "7", "8", "9", "C",
                 "4", "5", "6", "+",
                 "1", "2", "3", "-",
-                "0", "*", "%", "="
+                "0", "/", "*", "="
         };
 
         for (String text : buttons) {
@@ -51,31 +51,38 @@ public class Lab4_6 extends JFrame implements ActionListener {
 
         if (input.matches("[0-9]")) {
             display.setText(display.getText() + input);
-        } else if (input.matches("[+\\-*%]")) {
+        } else if (input.matches("[+\\-*/%]")) {
             try {
-                firstNumber = Double.parseDouble(display.getText());
-                operator = input;
+                first = Double.parseDouble(display.getText());
+                op = input;
                 display.setText("");
             } catch (Exception ex) {
                 display.setText("Error");
             }
         } else if (input.equals("=")) {
             try {
-                double secondNumber = Double.parseDouble(display.getText());
+                double second = Double.parseDouble(display.getText());
                 double result = 0;
 
-                switch (operator) {
+                switch (op) {
                     case "+":
-                        result = firstNumber + secondNumber;
+                        result = first + second;
                         break;
                     case "-":
-                        result = firstNumber - secondNumber;
+                        result = first - second;
+                        break;
+                    case "/":
+                        if (second == 0) {
+                            display.setText("Error");
+                            return;
+                        }
+                        result = first / second;
                         break;
                     case "*":
-                        result = firstNumber * secondNumber;
+                        result = first * second;
                         break;
                     case "%":
-                        result = firstNumber % secondNumber;
+                        result = first % second;
                         break;
                 }
                 display.setText(String.valueOf(result));
@@ -84,8 +91,8 @@ public class Lab4_6 extends JFrame implements ActionListener {
             }
         } else if (input.equals("C")) {
             display.setText("");
-            firstNumber = 0;
-            operator = "";
+            first = 0;
+            op = "";
         }
     }
 

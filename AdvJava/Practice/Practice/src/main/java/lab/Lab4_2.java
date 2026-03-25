@@ -6,6 +6,8 @@ import java.beans.Introspector;
 import java.beans.MethodDescriptor;
 import java.beans.PropertyDescriptor;
 
+// Qn. Java Bean Introspection
+
 class EmployeeBean2 {
     private int employeeId;
     private String name;
@@ -47,7 +49,6 @@ class EmployeeBean2 {
     }
 }
 
-// Qn. Java Bean Introspection
 public class Lab4_2 {
     public static void main(String[] args) {
         try {

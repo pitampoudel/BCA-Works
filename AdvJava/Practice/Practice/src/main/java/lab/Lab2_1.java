@@ -1,24 +1,23 @@
 package lab;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionListener;
+
 // Qn. Gender Selection: Registration Form Component
 public class Lab2_1 {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Gender Selection");
-        frame.setSize(300, 180);
+        frame.setSize(320, 180);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(null);
-
-        JLabel label = new JLabel("Selected Gender:");
-        label.setBounds(50, 120, 200, 20);
+        frame.setLayout(new BorderLayout());
 
         JRadioButton male = new JRadioButton("Male");
-        male.setBounds(50, 40, 70, 20);
         JRadioButton female = new JRadioButton("Female");
-        female.setBounds(120, 40, 80, 20);
         JRadioButton other = new JRadioButton("Other");
-        other.setBounds(210, 40, 70, 20);
+
+        JLabel label = new JLabel("Selected Gender:");
+        JPanel options = new JPanel(new FlowLayout());
 
         ButtonGroup group = new ButtonGroup();
         group.add(male);
@@ -30,10 +29,12 @@ public class Lab2_1 {
         female.addActionListener(listener);
         other.addActionListener(listener);
 
-        frame.add(male);
-        frame.add(female);
-        frame.add(other);
-        frame.add(label);
+        options.add(male);
+        options.add(female);
+        options.add(other);
+
+        frame.add(options, BorderLayout.CENTER);
+        frame.add(label, BorderLayout.SOUTH);
         frame.setVisible(true);
     }
 }

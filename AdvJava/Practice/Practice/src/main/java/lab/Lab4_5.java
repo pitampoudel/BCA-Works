@@ -1,19 +1,16 @@
 package lab;
 
 import javax.swing.*;
-import java.awt.event.*;
 
+// Qn. File menu: document editor simulation.
 public class Lab4_5 {
     public static void main(String[] args) {
-        // Create frame
         JFrame frame = new JFrame("Document Editor");
         frame.setSize(400, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Create MenuBar
         JMenuBar menuBar = new JMenuBar();
 
-        // File menu
         JMenu fileMenu = new JMenu("File");
         JMenuItem newItem = new JMenuItem("New");
         JMenuItem openItem = new JMenuItem("Open");
@@ -23,7 +20,6 @@ public class Lab4_5 {
         fileMenu.add(openItem);
         fileMenu.add(exitItem);
 
-        // Edit menu
         JMenu editMenu = new JMenu("Edit");
         JMenuItem cutItem = new JMenuItem("Cut");
         JMenuItem copyItem = new JMenuItem("Copy");
@@ -33,22 +29,13 @@ public class Lab4_5 {
         editMenu.add(copyItem);
         editMenu.add(pasteItem);
 
-        // Add menus to menu bar
         menuBar.add(fileMenu);
         menuBar.add(editMenu);
 
-        // Set menu bar to frame
         frame.setJMenuBar(menuBar);
 
-        // Action for Exit menu item
-        exitItem.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+        exitItem.addActionListener(e -> System.exit(0));
 
-                System.exit(0); // close program
-            }
-        });
-
-        // Make frame visible
         frame.setVisible(true);
     }
 }

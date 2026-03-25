@@ -1,9 +1,7 @@
 package lab;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
+// Qn. Dialog Demonstrator: IT Club Tutorial App.
 public class Lab2_3 {
     public static void main(String[] args) {
         JFrame frame = new JFrame("IT Club Tutorial App");
@@ -11,7 +9,6 @@ public class Lab2_3 {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(null);
 
-        // Buttons
         JButton messageButton = new JButton("Message Dialog");
         messageButton.setBounds(50, 50, 130, 25);
 
@@ -21,8 +18,7 @@ public class Lab2_3 {
         JButton inputButton = new JButton("Input Dialog");
         inputButton.setBounds(50, 120, 130, 25);
 
-        // Button actions
-        messageButton.addActionListener( e ->
+        messageButton.addActionListener(e ->
                 JOptionPane.showMessageDialog(frame, "This is a message dialog, thank you for clicking it!")
         );
 
@@ -38,11 +34,9 @@ public class Lab2_3 {
             }
         });
 
-        // Add components to frame
         frame.add(messageButton);
         frame.add(confirmButton);
         frame.add(inputButton);
-
         frame.setVisible(true);
     }
 }

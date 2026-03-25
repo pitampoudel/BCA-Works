@@ -2,72 +2,55 @@ package lab;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 import java.util.regex.Pattern;
 
+// Qn. Student Registration System
 public class Lab4_7 extends JFrame {
-
-    // Form components
-    private JTextField txtName, txtEmail;
-    private JTextArea txtAddress;
-    private JRadioButton rbMale, rbFemale, rbOther;
-    private JCheckBox cbReading, cbSports, cbMusic;
-    private JButton btnSubmit, btnClear;
+    private final JTextField txtName = new JTextField();
+    private final JTextField txtEmail = new JTextField();
+    private final JTextArea txtAddress = new JTextArea(3, 20);
+    private final JRadioButton rbMale = new JRadioButton("Male");
+    private final JRadioButton rbFemale = new JRadioButton("Female");
+    private final JRadioButton rbOther = new JRadioButton("Other");
+    private final JCheckBox cbReading = new JCheckBox("Reading");
+    private final JCheckBox cbSports = new JCheckBox("Sports");
+    private final JCheckBox cbMusic = new JCheckBox("Music");
 
     public Lab4_7() {
-
-        // JFrame settings
         setTitle("Student Registration System");
         setSize(600, 450);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout(10, 10));
 
-        // MENU BAR
         JMenuBar menuBar = new JMenuBar();
         JMenu menuFile = new JMenu("File");
         JMenuItem menuExit = new JMenuItem("Exit");
-
         menuExit.addActionListener(e -> System.exit(0));
-
         menuFile.add(menuExit);
         menuBar.add(menuFile);
         setJMenuBar(menuBar);
 
-        // TOP PANEL
-        JPanel topPanel = new JPanel(new GridLayout(1, 1));
-        JLabel titleLabel = new JLabel("Student Registration System", JLabel.CENTER);
+        JPanel topPanel = new JPanel();
+        JLabel titleLabel = new JLabel("Student Registration System", SwingConstants.CENTER);
         titleLabel.setFont(new Font("Arial", Font.BOLD, 18));
-
         topPanel.add(titleLabel);
         add(topPanel, BorderLayout.NORTH);
 
-        // MAIN FORM PANEL
         JPanel formPanel = new JPanel(new GridLayout(5, 2, 10, 10));
         formPanel.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
 
-        // Name
         formPanel.add(new JLabel("Name:"));
-        txtName = new JTextField();
         formPanel.add(txtName);
 
-        // Email
         formPanel.add(new JLabel("Email:"));
-        txtEmail = new JTextField();
         formPanel.add(txtEmail);
 
-        // Address
         formPanel.add(new JLabel("Address:"));
-        txtAddress = new JTextArea(3, 20);
-        JScrollPane addressScroll = new JScrollPane(txtAddress);
-        formPanel.add(addressScroll);
+        formPanel.add(new JScrollPane(txtAddress));
 
-        // Gender
         formPanel.add(new JLabel("Gender:"));
         JPanel genderPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        rbMale = new JRadioButton("Male");
-        rbFemale = new JRadioButton("Female");
-        rbOther = new JRadioButton("Other");
 
         ButtonGroup genderGroup = new ButtonGroup();
         genderGroup.add(rbMale);
@@ -79,13 +62,8 @@ public class Lab4_7 extends JFrame {
         genderPanel.add(rbOther);
         formPanel.add(genderPanel);
 
-        // Hobbies
         formPanel.add(new JLabel("Hobbies:"));
         JPanel hobbyPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        cbReading = new JCheckBox("Reading");
-        cbSports = new JCheckBox("Sports");
-        cbMusic = new JCheckBox("Music");
-
         hobbyPanel.add(cbReading);
         hobbyPanel.add(cbSports);
         hobbyPanel.add(cbMusic);
@@ -93,21 +71,18 @@ public class Lab4_7 extends JFrame {
 
         add(formPanel, BorderLayout.CENTER);
 
-        // BUTTON PANEL
         JPanel buttonPanel = new JPanel();
-        btnSubmit = new JButton("Submit");
-        btnClear = new JButton("Clear");
+        JButton btnSubmit = new JButton("Submit");
+        JButton btnClear = new JButton("Clear");
 
         buttonPanel.add(btnSubmit);
         buttonPanel.add(btnClear);
         add(buttonPanel, BorderLayout.SOUTH);
 
-        // EVENT HANDLING
         btnSubmit.addActionListener(e -> submitForm());
         btnClear.addActionListener(e -> clearForm());
     }
 
-    // FORM VALIDATION & SUBMISSION
     private void submitForm() {
         String name = txtName.getText().trim();
         String email = txtEmail.getText().trim();
@@ -128,28 +103,29 @@ public class Lab4_7 extends JFrame {
             return;
         }
 
-        String gender = "";
-        if (rbMale.isSelected()) gender = "Male";
-        else if (rbFemale.isSelected()) gender = "Female";
-        else if (rbOther.isSelected()) gender = "Other";
-        else {
+        String gender;
+        if (rbMale.isSelected()) {
+            gender = "Male";
+        } else if (rbFemale.isSelected()) {
+            gender = "Female";
+        } else if (rbOther.isSelected()) {
+            gender = "Other";
+        } else {
             showError("Please select a gender.");
             return;
         }
 
-        String hobbies = "";
-        if (cbReading.isSelected()) hobbies += "Reading, ";
-        if (cbSports.isSelected()) hobbies += "Sports, ";
-        if (cbMusic.isSelected()) hobbies += "Music, ";
+        StringBuilder hobbies = new StringBuilder();
+        if (cbReading.isSelected()) hobbies.append("Reading, ");
+        if (cbSports.isSelected()) hobbies.append("Sports, ");
+        if (cbMusic.isSelected()) hobbies.append("Music, ");
 
-        if (hobbies.isEmpty()) {
+        if (hobbies.length() == 0) {
             showError("Please select at least one hobby.");
             return;
         }
+        hobbies.setLength(hobbies.length() - 2);
 
-        hobbies = hobbies.substring(0, hobbies.length() - 2);
-
-        //SUMMARY DIALOG
         String summary =
                 "Student Registration Summary\n\n" +
                         "Name: " + name + "\n" +
@@ -162,7 +138,6 @@ public class Lab4_7 extends JFrame {
                 "Registration Successful", JOptionPane.INFORMATION_MESSAGE);
     }
 
-    // CLEAR FORM
     private void clearForm() {
         txtName.setText("");
         txtEmail.setText("");
@@ -175,9 +150,7 @@ public class Lab4_7 extends JFrame {
         cbMusic.setSelected(false);
     }
 
-    // EMAIL VALIDATION
     private boolean isValidEmail(String email) {
-
         return Pattern.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$", email);
     }
 
@@ -186,10 +159,7 @@ public class Lab4_7 extends JFrame {
                 "Input Error", JOptionPane.ERROR_MESSAGE);
     }
 
-
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            new Lab4_7().setVisible(true);
-        });
+        SwingUtilities.invokeLater(() -> new Lab4_7().setVisible(true));
     }
 }

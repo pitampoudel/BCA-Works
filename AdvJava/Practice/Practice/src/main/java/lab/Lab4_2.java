@@ -6,16 +6,13 @@ import java.beans.Introspector;
 import java.beans.MethodDescriptor;
 import java.beans.PropertyDescriptor;
 
-// JavaBean class
 class EmployeeBean2 {
-
     private int employeeId;
     private String name;
     private String department;
     private double salary;
 
-    public EmployeeBean2() {
-    }
+    public EmployeeBean2() {}
 
     public int getEmployeeId() {
         return employeeId;
@@ -50,30 +47,23 @@ class EmployeeBean2 {
     }
 }
 
+// Qn. Java Bean Introspection
 public class Lab4_2 {
-
     public static void main(String[] args) {
-
         try {
-            // Get BeanInfo using Introspector
             BeanInfo beanInfo = Introspector.getBeanInfo(EmployeeBean2.class);
-
             System.out.println("JavaBean Introspection Report");
-
-            // Properties Section
             System.out.println("\nProperties...");
             for (PropertyDescriptor pd : beanInfo.getPropertyDescriptors()) {
                 System.out.println("Property Name : " + pd.getName());
             }
 
-            // Methods Section
-            System.out.println("\n Methods...");
+            System.out.println("\nMethods...");
             for (MethodDescriptor md : beanInfo.getMethodDescriptors()) {
                 System.out.println("Method Name : " + md.getMethod().getName());
             }
 
-            // Events Section
-            System.out.println("\nEvents... ");
+            System.out.println("\nEvents...");
             EventSetDescriptor[] events = beanInfo.getEventSetDescriptors();
             if (events.length == 0) {
                 System.out.println("No events supported by this bean.");
@@ -82,8 +72,6 @@ public class Lab4_2 {
                     System.out.println("Event Name : " + ed.getName());
                 }
             }
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }

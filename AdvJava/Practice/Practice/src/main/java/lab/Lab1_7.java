@@ -2,46 +2,46 @@ package lab;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
 
+// Qn. Font Style Toggle: apply bold and italic styles to a label using checkboxes.
 public class Lab1_7 extends JFrame {
-    private JLabel label;
-    private JCheckBox bold;
-    private JCheckBox italic;
-    private static final int FONTSIZE = 24;
+    private static final int FONT_SIZE = 40;
+    private final JLabel label;
+    private final JCheckBox bold;
+    private final JCheckBox italic;
 
     public Lab1_7() {
-        label = new JLabel ("King is back .........", SwingConstants.CENTER);
-        label.setFont(new Font("Serif", Font.BOLD, FONTSIZE));
+        label = new JLabel("hi there .........", SwingConstants.CENTER);
         add(label, BorderLayout.CENTER);
 
-        ActionListener listener = event -> {
-            int mode = 0;
-            if (bold.isSelected()) mode += Font.BOLD;
-            if (italic.isSelected()) mode += Font.ITALIC;
-            label.setFont(new Font("Serif", mode,40));
-        };
-        JPanel buttonPanel = new JPanel();
-
-        bold = new JCheckBox("Bold");
-        bold.addActionListener(listener);
-        bold.setSelected(true);
-        buttonPanel.add(bold);
-
+        bold = new JCheckBox("Bold", true);
         italic = new JCheckBox("Italic");
-        italic.addActionListener(listener);
-        buttonPanel.add(italic);
 
-        add(buttonPanel, BorderLayout.SOUTH);
-        pack();
+        bold.addActionListener(e -> updateFont());
+        italic.addActionListener(e -> updateFont());
+
+        JPanel panel = new JPanel();
+        panel.add(bold);
+        panel.add(italic);
+        add(panel, BorderLayout.SOUTH);
+        updateFont();
     }
-    public static  void main(String[] args) {
+
+    private void updateFont() {
+        int style = Font.PLAIN;
+        if (bold.isSelected()) {
+            style += Font.BOLD;
+        }
+        if (italic.isSelected()) {
+            style += Font.ITALIC;
+        }
+        label.setFont(new Font("Serif", style, FONT_SIZE));
+    }
+
+    public static void main(String[] args) {
         JFrame frame = new Lab1_7();
         frame.setSize(500, 500);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setTitle("CheckBox Example");
         frame.setVisible(true);
     }
 }
-
-

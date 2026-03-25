@@ -2,12 +2,10 @@ package lab;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 
+// Qn. CardLayout Wizard: switch between setup steps using Next and Back buttons.
 public class Lab1_4 {
-
     public static void main(String[] args) {
-
         JFrame frame = new JFrame("Setup Wizard");
         frame.setSize(400, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -32,17 +30,15 @@ public class Lab1_4 {
         JButton backButton = new JButton("Back");
         JButton nextButton = new JButton("Next");
 
+        backButton.addActionListener(e -> cardLayout.previous(cardPanel));
+        nextButton.addActionListener(e -> cardLayout.next(cardPanel));
+
         JPanel buttonPanel = new JPanel();
         buttonPanel.add(backButton);
         buttonPanel.add(nextButton);
 
-        backButton.addActionListener(e -> cardLayout.previous(cardPanel));
-        nextButton.addActionListener(e -> cardLayout.next(cardPanel));
-
         frame.add(cardPanel, BorderLayout.CENTER);
         frame.add(buttonPanel, BorderLayout.SOUTH);
-
         frame.setVisible(true);
     }
 }
-

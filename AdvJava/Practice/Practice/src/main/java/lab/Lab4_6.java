@@ -2,32 +2,28 @@ package lab;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+// Qn. Basic Calculator with GUI
 public class Lab4_6 extends JFrame implements ActionListener {
-
-    JTextField display;
-    double firstNumber = 0;
-    String operator = "";
+    private final JTextField display = new JTextField();
+    private double firstNumber = 0;
+    private String operator = "";
 
     public Lab4_6() {
-
         setTitle("Calculator");
         setSize(320, 420);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout(10, 10));
 
-        // Display field
-        display = new JTextField();
         display.setFont(new Font("Arial", Font.BOLD, 26));
         display.setHorizontalAlignment(JTextField.RIGHT);
         display.setEditable(false);
         display.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         add(display, BorderLayout.NORTH);
 
-        // Buttons panel
-        JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(4, 4, 12, 12));
+        JPanel panel = new JPanel(new GridLayout(4, 4, 12, 12));
         panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         String[] buttons = {
@@ -51,16 +47,11 @@ public class Lab4_6 extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
         String input = e.getActionCommand();
 
-        // Digits
         if (input.matches("[0-9]")) {
             display.setText(display.getText() + input);
-        }
-
-        // Operators
-        else if (input.matches("[+\\-*%]")) {
+        } else if (input.matches("[+\\-*%]")) {
             try {
                 firstNumber = Double.parseDouble(display.getText());
                 operator = input;
@@ -68,10 +59,7 @@ public class Lab4_6 extends JFrame implements ActionListener {
             } catch (Exception ex) {
                 display.setText("Error");
             }
-        }
-
-        // Equals
-        else if (input.equals("=")) {
+        } else if (input.equals("=")) {
             try {
                 double secondNumber = Double.parseDouble(display.getText());
                 double result = 0;
@@ -94,10 +82,7 @@ public class Lab4_6 extends JFrame implements ActionListener {
             } catch (Exception ex) {
                 display.setText("Error");
             }
-        }
-
-        // Clear
-        else if (input.equals("C")) {
+        } else if (input.equals("C")) {
             display.setText("");
             firstNumber = 0;
             operator = "";

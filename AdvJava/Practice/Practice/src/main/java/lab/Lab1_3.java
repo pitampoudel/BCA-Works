@@ -1,3 +1,5 @@
+package lab;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -5,7 +7,7 @@ public class Lab1_3 {
 
     public static void main(String[] args) {
 
-        JFrame frame = new JFrame("College Dashboard of Saudeep Adhikari ");
+        JFrame frame = new JFrame("College Dashboard");
         frame.setSize(600, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);

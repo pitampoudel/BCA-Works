@@ -1,9 +1,11 @@
+package lab;
+
 import javax.swing.*;
 
 public class Lab1_20 {
     public static void main(String[] args) {
         // Create a frame
-        JFrame frame = new JFrame("Notes App - Saudeep Adhikari");
+        JFrame frame = new JFrame("Notes App");
         frame.setSize(400, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(null);

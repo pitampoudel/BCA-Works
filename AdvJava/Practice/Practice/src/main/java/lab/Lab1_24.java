@@ -1,3 +1,5 @@
+package lab;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -10,7 +12,7 @@ public class Lab1_24 extends JFrame implements ActionListener {
 
     public Lab1_24() {
 
-        setTitle("Calculator-- Saudeep Adhikari");
+        setTitle("Calculator");
         setSize(320, 420);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout(10, 10));

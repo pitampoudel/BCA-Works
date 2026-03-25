@@ -1,3 +1,5 @@
+package lab;
+
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
@@ -37,7 +39,6 @@ class SalaryBean {
 public class Lab4_3 {
 
     public static void main(String[] args) {
-        System.out.println("Saudeep Adhikari\n");
         SalaryBean bean = new SalaryBean();
 
         // Register PropertyChangeListener

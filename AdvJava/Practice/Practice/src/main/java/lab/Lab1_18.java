@@ -1,3 +1,5 @@
+package lab;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.AffineTransform;
@@ -7,7 +9,7 @@ import java.awt.event.ActionListener;
 public class Lab1_18 extends JFrame {
 
     public Lab1_18() {
-        setTitle("Image Transform - Saudeep Adhikari");
+        setTitle("Image Transform");
         setSize(700, 550);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());

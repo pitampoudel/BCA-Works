@@ -1,3 +1,5 @@
+package lab;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -30,7 +32,7 @@ public class Lab1_7 extends JFrame {
         italic.addActionListener(listener);
         buttonPanel.add(italic);
 
-        add(buttonPanel, BorderLayout. SOUTH);
+        add(buttonPanel, BorderLayout.SOUTH);
         pack();
     }
     public static  void main(String[] args) {
@@ -39,9 +41,6 @@ public class Lab1_7 extends JFrame {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("CheckBox Example");
         frame.setVisible(true);
-        JLabel nameLabel = new JLabel("Saudeep Adhikari", SwingConstants.CENTER);
-        nameLabel.setFont(new Font("Serif", Font.BOLD, 16));
-        frame.add(nameLabel, BorderLayout.NORTH);
     }
 }
 

@@ -1,3 +1,5 @@
+package lab;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -7,7 +9,7 @@ public class Lab1_19 extends JFrame {
 
     public Lab1_19() {
 
-        setTitle("Registration Form -Saudeep Adhikari");
+        setTitle("Registration Form");
         setSize(400, 250);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 

@@ -1,3 +1,5 @@
+package lab;
+
 import javax.swing.*;
 import java.awt.event.ActionListener;
 
@@ -7,10 +9,6 @@ public class Lab1_8 {
         frame.setSize(300, 180);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(null);
-
-        // Name label
-        JLabel nameLabel = new JLabel("Saudeep Adhikari");
-        nameLabel.setBounds(90, 10, 200, 20);
 
         // Gender selection label
         JLabel label = new JLabel("Selected Gender:");
@@ -36,7 +34,6 @@ public class Lab1_8 {
         other.addActionListener(listener);
 
         // Add components to frame
-        frame.add(nameLabel);
         frame.add(male);
         frame.add(female);
         frame.add(other);

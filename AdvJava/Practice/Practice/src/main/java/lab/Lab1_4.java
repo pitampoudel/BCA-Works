@@ -1,3 +1,5 @@
+package lab;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -10,10 +12,6 @@ public class Lab1_4 {
         frame.setSize(400, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
-
-        JLabel nameLabel = new JLabel("Saudeep Adhikari", SwingConstants.CENTER);
-        nameLabel.setFont(new Font("Serif", Font.BOLD, 16));
-        frame.add(nameLabel, BorderLayout.NORTH);
 
         CardLayout cardLayout = new CardLayout();
         JPanel cardPanel = new JPanel(cardLayout);

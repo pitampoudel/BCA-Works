@@ -1,3 +1,5 @@
+package lab;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -11,10 +13,6 @@ public class Lab1_1 {
         frame.setSize(400, 300);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        JLabel nameLabel = new JLabel("Saudeep Adhikari", SwingConstants.CENTER);
-        nameLabel.setFont(new Font("Serif", Font.BOLD, 16));
-        frame.add(nameLabel, BorderLayout.NORTH);
 
         ImageIcon icon = new ImageIcon("src/images/image1.jpg");
         frame.setIconImage(icon.getImage());

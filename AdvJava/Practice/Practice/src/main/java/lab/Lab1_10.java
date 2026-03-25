@@ -1,3 +1,5 @@
+package lab;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,10 +10,6 @@ public class Lab1_10 {
         frame.setSize(350, 200);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(null);
-
-        // Name label
-        JLabel nameLabel = new JLabel("Saudeep Adhikari");
-        nameLabel.setBounds(110, 10, 200, 20);
 
         // Buttons
         JButton messageButton = new JButton("Message Dialog");
@@ -41,7 +39,6 @@ public class Lab1_10 {
         });
 
         // Add components to frame
-        frame.add(nameLabel);
         frame.add(messageButton);
         frame.add(confirmButton);
         frame.add(inputButton);

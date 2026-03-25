@@ -1,3 +1,5 @@
+package lab;
+
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -6,7 +8,7 @@ import java.awt.*;
 public class Lab1_21 {
     public static void main(String[] args) {
         // Create frame
-        JFrame frame = new JFrame("Color Picker - Saudeep Adhikari");
+        JFrame frame = new JFrame("Color Picker");
         frame.setSize(400, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(null);

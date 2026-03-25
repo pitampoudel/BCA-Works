@@ -1,16 +1,14 @@
+package lab;
+
 import javax.swing.*;
 import java.awt.event.*;
 
 public class Lab1_23 {
     public static void main(String[] args) {
         // Create frame
-        JFrame frame = new JFrame("Document Editor - Saudeep Adhikari");
+        JFrame frame = new JFrame("Document Editor");
         frame.setSize(400, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        // Label for name
-        JLabel nameLabel = new JLabel("Saudeep Adhikari");
-        frame.add(nameLabel, "North"); // display name at the top
 
         // Create MenuBar
         JMenuBar menuBar = new JMenuBar();

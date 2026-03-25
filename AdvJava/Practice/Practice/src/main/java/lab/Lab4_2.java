@@ -1,3 +1,5 @@
+package lab;
+
 import java.beans.BeanInfo;
 import java.beans.EventSetDescriptor;
 import java.beans.Introspector;
@@ -54,9 +56,8 @@ public class Lab4_2 {
 
         try {
             // Get BeanInfo using Introspector
-            BeanInfo beanInfo = Introspector.getBeanInfo(EmployeeBean.class);
+            BeanInfo beanInfo = Introspector.getBeanInfo(EmployeeBean2.class);
 
-            System.out.println("Saudeep Adhikari ");
             System.out.println("JavaBean Introspection Report");
 
             // Properties Section

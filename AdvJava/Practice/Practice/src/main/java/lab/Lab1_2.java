@@ -1,3 +1,5 @@
+package lab;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -11,10 +13,6 @@ public class Lab1_2{
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
         frame.setLayout(new BorderLayout());
-
-        JLabel nameLabel = new JLabel("Saudeep Adhikari", SwingConstants.CENTER);
-        nameLabel.setFont(new Font("Serif", Font.BOLD, 16));
-        frame.add(nameLabel, BorderLayout.NORTH);
 
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(3, 2, 10, 10));

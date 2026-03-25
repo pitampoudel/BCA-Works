@@ -1,3 +1,5 @@
+package lab;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -9,11 +11,6 @@ public class Lab1_16 {
         frame.setSize(500, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new BorderLayout());
-
-        // Name label
-        JLabel nameLabel = new JLabel("Saudeep Adhikari", SwingConstants.CENTER);
-        nameLabel.setFont(new Font("Serif", Font.BOLD, 16));
-        frame.add(nameLabel, BorderLayout.NORTH);
 
         // Image resource paths inside src/images/
         String[] images = {

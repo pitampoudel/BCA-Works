@@ -1,3 +1,5 @@
+package lab;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -6,7 +8,7 @@ import java.awt.event.ActionListener;
 public class Lab1_22 {
     public static void main(String[] args) {
         // Create frame
-        JFrame frame = new JFrame("Traffic Light Simulator - Saudeep Adhikari");
+        JFrame frame = new JFrame("Traffic Light Simulator");
         frame.setSize(300, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(null);

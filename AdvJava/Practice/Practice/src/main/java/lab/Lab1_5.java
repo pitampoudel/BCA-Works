@@ -1,3 +1,5 @@
+package lab;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -7,10 +9,6 @@ public class Lab1_5  {
         JFrame frame = new JFrame("Java Programs");
         frame.setSize(400, 300);
         frame.setLayout(new FlowLayout());
-        JLabel nameLabel = new JLabel("Saudeep Adhikari", SwingConstants.CENTER);
-        nameLabel.setFont(new Font("Serif", Font.BOLD, 16));
-        frame.add(nameLabel, BorderLayout.NORTH);
-
         // Create buttons
         JButton button1 = new JButton("Red");
         JButton button2 = new JButton("Yellow");

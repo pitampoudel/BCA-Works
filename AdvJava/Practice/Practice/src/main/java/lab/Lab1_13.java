@@ -1,3 +1,5 @@
+package lab;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -10,11 +12,6 @@ public class Lab1_13 {
         frame.setSize(400, 200);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
-
-        // Display your name in the frame
-        JLabel nameLabel = new JLabel("Saudeep Adhikari");
-        nameLabel.setFont(new Font("Serif", Font.BOLD, 16));
-        frame.add(nameLabel);
 
         // Panel for mouse events
         JPanel bannerPanel = new JPanel();

@@ -1,3 +1,5 @@
+package lab;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,10 +10,6 @@ public class Lab1_9 {
         frame.setSize(350, 250);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(null);
-
-        // Name label
-        JLabel nameLabel = new JLabel("Saudeep Adhikari");
-        nameLabel.setBounds(100, 10, 200, 20);
 
         // Hobby checkboxes
         JCheckBox reading = new JCheckBox("Reading");
@@ -52,7 +50,6 @@ public class Lab1_9 {
         });
 
         // Add components to frame
-        frame.add(nameLabel);
         frame.add(reading);
         frame.add(sports);
         frame.add(music);

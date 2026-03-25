@@ -1,3 +1,5 @@
+package lab;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -33,15 +35,11 @@ public class Lab1_25 extends JFrame {
         setJMenuBar(menuBar);
 
         // TOP PANEL
-        JPanel topPanel = new JPanel(new GridLayout(2, 1));
+        JPanel topPanel = new JPanel(new GridLayout(1, 1));
         JLabel titleLabel = new JLabel("Student Registration System", JLabel.CENTER);
         titleLabel.setFont(new Font("Arial", Font.BOLD, 18));
 
-        JLabel nameLabel = new JLabel("Developed by: Saudeep Adhikari", JLabel.CENTER);
-        nameLabel.setFont(new Font("Arial", Font.PLAIN, 13));
-
         topPanel.add(titleLabel);
-        topPanel.add(nameLabel);
         add(topPanel, BorderLayout.NORTH);
 
         // MAIN FORM PANEL

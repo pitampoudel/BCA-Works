@@ -1,3 +1,5 @@
+package lab;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -15,7 +17,7 @@ public class Lab1_17 extends JFrame {
 
     public Lab1_17() {
 
-        setTitle("Photo Viewer - Saudeep Adhikari");
+        setTitle("Photo Viewer");
         setSize(400, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());

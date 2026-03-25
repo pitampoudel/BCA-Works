@@ -1,3 +1,5 @@
+package lab;
+
 class EmployeeBean1 {
 
     // Private properties
@@ -50,7 +52,7 @@ public class Lab4_1 {
     public static void main(String[] args) {
 
         // Create JavaBean object
-        EmployeeBean emp = new EmployeeBean();
+        EmployeeBean1 emp = new EmployeeBean1();
 
         // Set values
         emp.setEmployeeId(101);

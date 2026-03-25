@@ -1,3 +1,5 @@
+package lab;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -10,11 +12,6 @@ public class Lab1_12 {
         frame.setSize(300, 150);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new FlowLayout());
-
-        // Display your name in the frame
-        JLabel nameLabel = new JLabel("Saudeep Adhikari");
-        nameLabel.setFont(new Font("Serif", Font.BOLD, 16));
-        frame.add(nameLabel);
 
         // Label to show counter
         JLabel counterLabel = new JLabel("Button clicked: 0 time(s)");

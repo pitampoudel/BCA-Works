@@ -1,111 +1,61 @@
-# 4.Implement the Tic-Tac-Toe game in Python using the Minimax algorithm.
+# 4. Implement the Tic-Tac-Toe game using the Minimax algorithm.
 
-"""-----------------------"""
+WINS = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
 
-# This function is used to draw the board's current state every time the user turn arrives.
-def ConstBoard(board):
-    print("Current State Of Board : \n\n");
-    for i in range(0, 9):
-        if ((i > 0) and (i % 3) == 0):
-            print("\n");
-        if (board[i] == 0):
-            print("- ", end=" ");
-        if (board[i] == 1):
-            print("O ", end=" ");
-        if (board[i] == -1):
-            print("X ", end=" ");
-    print("\n\n");
+def print_board(board):
+    print("\nCurrent Board:")
+    for i in range(9):
+        if i % 3 == 0 and i > 0:
+            print()
+        print({0: '-', 1: 'O', -1: 'X'}[board[i]], end=' ')
+    print("\n")
 
+def check_winner(board):
+    for w in WINS:
+        if board[w[0]] != 0 and board[w[0]] == board[w[1]] == board[w[2]]:
+            return board[w[0]]
+    return 0
 
-# This function takes the user move as input and make the required changes on the board.
-def User1Turn(board):
-    pos = input("Enter X's position from [1...9]: ");
-    pos = int(pos);
-    if (board[pos - 1] != 0):
-        print("Wrong Move!!!");
-        exit(0);
-    board[pos - 1] = -1;
-
-
-# MinMax function.
 def minimax(board, player):
-    x = analyzeboard(board);
-    if (x != 0):
-        return (x * player);
-    pos = -1;
-    value = -2;
-    for i in range(0, 9):
-        if (board[i] == 0):
-            board[i] = player;
-            score = -minimax(board, (player * -1));
-            if (score > value):
-                value = score;
-                pos = i;
-            board[i] = 0;
+    result = check_winner(board)
+    if result != 0:
+        return result * player
+    scores = [-minimax(board[:i] + [player] + board[i+1:], -player)
+              for i in range(9) if board[i] == 0]
+    return max(scores) if scores else 0
 
-    if (pos == -1):
-        return 0;
-    return value;
+def comp_turn(board):
+    best_score, best_pos = -2, -1
+    for i in range(9):
+        if board[i] == 0:
+            board[i] = 1
+            score = -minimax(board, -1)
+            board[i] = 0
+            if score > best_score:
+                best_score, best_pos = score, i
+    board[best_pos] = 1
 
+def user_turn(board):
+    while True:
+        pos = int(input("Enter X's position (1-9): ")) - 1
+        if 0 <= pos < 9 and board[pos] == 0:
+            board[pos] = -1
+            break
+        print("Invalid move! Try again.")
 
-# This function makes the computer's move using minmax algorithm.
-def CompTurn(board):
-    pos = -1;
-    value = -2;
-    for i in range(0, 9):
-        if (board[i] == 0):
-            board[i] = 1;
-            score = -minimax(board, -1);
-            board[i] = 0;
-            if (score > value):
-                value = score;
-                pos = i;
+board = [0] * 9
+print("Computer: O  |  You: X")
+first = int(input("Play 1st or 2nd? "))
 
-    board[pos] = 1;
+for i in range(9):
+    if check_winner(board):
+        break
+    if (i + first) % 2 == 0:
+        comp_turn(board)
+    else:
+        print_board(board)
+        user_turn(board)
 
-
-# This function is used to analyze a game.
-def analyzeboard(board):
-    cb = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
-
-    for i in range(0, 8):
-        if (board[cb[i][0]] != 0 and
-                board[cb[i][0]] == board[cb[i][1]] and
-                board[cb[i][0]] == board[cb[i][2]]):
-            return board[cb[i][2]];
-    return 0;
-
-
-# Main Function.
-def main():
-    # The broad is considered in the form of a single dimentional array.
-    # One player moves 1 and other move -1.
-    board = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-
-    print("Computer : O Vs. You : X");
-    player = input("Enter to play 1(st) or 2(nd) :");
-    player = int(player);
-    for i in range(0, 9):
-        if (analyzeboard(board) != 0):
-            break;
-        if ((i + player) % 2 == 0):
-            CompTurn(board);
-        else:
-            ConstBoard(board);
-            User1Turn(board);
-
-    x = analyzeboard(board);
-    if (x == 0):
-        ConstBoard(board);
-        print("Draw!!!")
-    if (x == -1):
-        ConstBoard(board);
-        print("X Wins!!! Y Loose !!!")
-    if (x == 1):
-        ConstBoard(board);
-        print("X Loose!!! O Wins !!!!")
-
-
-# ---------------#
-main()
-# ---------------#
+print_board(board)
+result = check_winner(board)
+print("Draw!" if result == 0 else ("X Wins!" if result == -1 else "O Wins!"))

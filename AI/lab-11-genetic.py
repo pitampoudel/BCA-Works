@@ -1,8 +1,6 @@
-# 11. Implement a program for genetic algorithm
-
+# 11. Implement a Genetic Algorithm for the Travelling Salesman Problem (TSP).
 import random
 
-# Distance matrix (example: 4 cities)
 distances = [
     [0, 10, 15, 20],
     [10, 0, 35, 25],
@@ -10,43 +8,33 @@ distances = [
     [20, 25, 30, 0]
 ]
 
-# Fitness function: total distance of route
 def route_distance(route):
-    return sum(distances[route[i]][route[(i+1) % len(route)]] for i in range(len(route)))
+    return sum(distances[route[i]][route[(i + 1) % len(route)]] for i in range(len(route)))
 
-# Generate initial population
 def create_population(size, num_cities):
-    population = []
-    for _ in range(size):
-        route = list(range(num_cities))
-        random.shuffle(route)
-        population.append(route)
-    return population
+    return [random.sample(range(num_cities), num_cities) for _ in range(size)]
 
-# Selection: pick best routes
 def selection(population):
-    return sorted(population, key=route_distance)[:len(population)//2]
+    return sorted(population, key=route_distance)[:len(population) // 2]
 
-# Crossover: order crossover
-def crossover(parent1, parent2):
-    start, end = sorted(random.sample(range(len(parent1)), 2))
-    child = [None]*len(parent1)
-    child[start:end] = parent1[start:end]
+def crossover(p1, p2):
+    start, end = sorted(random.sample(range(len(p1)), 2))
+    child = [None] * len(p1)
+    child[start:end] = p1[start:end]
     pos = end
-    for city in parent2:
+    for city in p2:
         if city not in child:
-            if pos >= len(parent1): pos = 0
+            if pos >= len(p1):
+                pos = 0
             child[pos] = city
             pos += 1
     return child
 
-# Mutation: swap two cities
 def mutate(route):
     i, j = random.sample(range(len(route)), 2)
     route[i], route[j] = route[j], route[i]
 
-# Genetic Algorithm
-def genetic_algorithm(num_cities, generations=100, pop_size=10):
+def genetic_algorithm(num_cities=4, generations=100, pop_size=10):
     population = create_population(pop_size, num_cities)
     for _ in range(generations):
         selected = selection(population)
@@ -54,14 +42,13 @@ def genetic_algorithm(num_cities, generations=100, pop_size=10):
         while len(children) < pop_size:
             p1, p2 = random.sample(selected, 2)
             child = crossover(p1, p2)
-            if random.random() < 0.1:  # mutation chance
+            if random.random() < 0.1:
                 mutate(child)
             children.append(child)
         population = children
-    best_route = min(population, key=route_distance)
-    return best_route, route_distance(best_route)
+    best = min(population, key=route_distance)
+    return best, route_distance(best)
 
-# Run example
-best, dist = genetic_algorithm(num_cities=4)
-print("Best Route:", best)
-print("Distance:", dist)
+best_route, best_dist = genetic_algorithm()
+print("Best Route:", best_route)
+print("Distance: ", best_dist)

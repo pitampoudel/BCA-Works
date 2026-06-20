@@ -1,79 +1,44 @@
-# 8.Implement a Naive Bayes classifier to classify messages as spam or ham.
+# 8. Implement a Naive Bayes classifier to classify messages as spam or ham.
+import math
 
 class NaiveBayesClassifier:
-    def __init__(self):
-        self.class_probs = {}
-        self.word_probs = {}
-
     def fit(self, X, y):
-        num_samples = len(X)
-        num_spam = sum(1 for label in y if label == 'spam')
-        num_ham = num_samples - num_spam
+        n = len(X)
+        classes = set(y)
+        self.class_probs = {c: y.count(c) / n for c in classes}
+        word_count  = {c: {} for c in classes}
+        total_words = {c: 0  for c in classes}
 
-        # Calculate class probabilities
-        self.class_probs['spam'] = num_spam / num_samples
-        self.class_probs['ham'] = num_ham / num_samples
+        for msg, label in zip(X, y):
+            for word in msg.split():
+                word_count[label][word] = word_count[label].get(word, 0) + 1
+                total_words[label] += 1
 
-        # Calculate word probabilities for spam and ham
-        spam_word_count = {}
-        ham_word_count = {}
-        total_spam_words = 0
-        total_ham_words = 0
-
-        for message, label in zip(X, y):
-            words = message.split()
-            for word in words:
-                if label == 'spam':
-                    spam_word_count[word] = spam_word_count.get(word, 0) + 1
-                    total_spam_words += 1
-                else:
-                    ham_word_count[word] = ham_word_count.get(word, 0) + 1
-                    total_ham_words += 1
-
-        vocab = set(spam_word_count.keys()).union(set(ham_word_count.keys()))
-
-        for word in vocab:
-            spam_prob = (spam_word_count.get(word, 0) + 1) / (total_spam_words + len(vocab)) # laplace smoothing is applied here
-            ham_prob = (ham_word_count.get(word, 0) + 1) / (total_ham_words + len(vocab))
-            self.word_probs[word] = {'spam': spam_prob, 'ham': ham_prob}
+        vocab = set(w for c in word_count for w in word_count[c])
+        self.word_probs = {
+            word: {c: (word_count[c].get(word, 0) + 1) / (total_words[c] + len(vocab))
+                   for c in classes}
+            for word in vocab
+        }
+        self.classes = classes
 
     def predict(self, message):
-        spam_score = math.log(self.class_probs['spam'])
-        ham_score = math.log(self.class_probs['ham'])
-
-        words = message.split()
-        for word in words:
+        scores = {c: math.log(self.class_probs[c]) for c in self.classes}
+        for word in message.split():
             if word in self.word_probs:
-                spam_score += math.log(self.word_probs[word]['spam'])
-                ham_score += math.log(self.word_probs[word]['ham'])
+                for c in self.classes:
+                    scores[c] += math.log(self.word_probs[word][c])
+        return max(scores, key=scores.get)
 
-        if spam_score > ham_score:
-            return 'spam'
-        else:
-            return 'ham'
-
-# Training data
 X_train = [
-    "send us your password",
-    "send us your review",
-    "send us your account",
-    "Review your password",
-    "send your password",
-    "Review us"
+    "send us your password", "send us your review",
+    "send us your account",  "Review your password",
+    "send your password",    "Review us"
 ]
 y_train = ['spam', 'ham', 'spam', 'ham', 'spam', 'ham']
+X_test  = ["Your activity report", "renew your password"]
 
-# Test data
-X_test = [
-    "Your activity report",
-    "renew your password"
-]
-
-# Create and train the Naive Bayes classifier
 clf = NaiveBayesClassifier()
 clf.fit(X_train, y_train)
-
-# Predict
-for message in X_test:
-    prediction = clf.predict(message)
-    print(f"Message: {message} -> Predicted label: {prediction}")
+for msg in X_test:
+    print(f"'{msg}' -> {clf.predict(msg)}")

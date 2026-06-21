@@ -9,15 +9,28 @@ graph = {
     'F': []
 }
 
-def dfs(node, visited=None):
+order = []
+
+def dfs(node, visited=None, depth=0):
     if visited is None:
         visited = set()
     visited.add(node)
-    print(node, end=' ')
-    for neighbor in graph[node]:
-        if neighbor not in visited:
-            dfs(neighbor, visited)
+    order.append(node)
+    indent = "  " * depth
+    neighbors = graph[node]
+    print(f"{indent}Visit : {node}  | Neighbors : {neighbors}  | Visited : {sorted(visited)}")
+    for nb in neighbors:
+        if nb not in visited:
+            dfs(nb, visited, depth + 1)
+        else:
+            print(f"{indent}  -> {nb} already visited, skip")
 
-print("DFS Traversal from A:", end=' ')
+print("=" * 55)
+print("         LAB 2 Depth-First Search (DFS) by Pitam")
+print("=" * 55)
+print(f"\nGraph Adjacency List:")
+for g_node, g_neighbors in graph.items():
+    print(f"  {g_node} -> {g_neighbors}")
+print(f"\nStarting DFS from node 'A':\n")
 dfs('A')
-print()
+print(f"\nDFS Traversal Order : {' -> '.join(order)}")

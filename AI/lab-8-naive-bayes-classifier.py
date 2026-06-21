@@ -22,13 +22,19 @@ class NaiveBayesClassifier:
         }
         self.classes = classes
 
+        print(f"Vocabulary size : {len(vocab)}")
+        print(f"Class Probabilities:")
+        for c in sorted(classes):
+            print(f"  P({c}) = {self.class_probs[c]:.2f}")
+
     def predict(self, message):
         scores = {c: math.log(self.class_probs[c]) for c in self.classes}
         for word in message.split():
             if word in self.word_probs:
                 for c in self.classes:
                     scores[c] += math.log(self.word_probs[word][c])
-        return max(scores, key=scores.get)
+        label = max(scores, key=scores.get)
+        return label, scores
 
 X_train = [
     "send us your password", "send us your review",
@@ -38,7 +44,18 @@ X_train = [
 y_train = ['spam', 'ham', 'spam', 'ham', 'spam', 'ham']
 X_test  = ["Your activity report", "renew your password"]
 
+print("=" * 50)
+print("     LAB 8 Naive Bayes Spam Classifier by Pitam")
+print("=" * 50)
+print(f"\nTraining on {len(X_train)} messages ({y_train.count('spam')} spam, {y_train.count('ham')} ham)\n")
+
 clf = NaiveBayesClassifier()
 clf.fit(X_train, y_train)
+
+print("\n--- Predictions ---")
 for msg in X_test:
-    print(f"'{msg}' -> {clf.predict(msg)}")
+    label, scores = clf.predict(msg)
+    print(f"\n  Message : '{msg}'")
+    # for c in sorted(scores):
+    #     print(f"    log P({c}|msg) = {scores[c]:.4f}")
+    print(f"  Predicted : {label.upper()}")

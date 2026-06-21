@@ -21,9 +21,18 @@ sibling_of(X, Y)  :- parent_of(P, X), parent_of(P, Y), X \= Y.
 ancestor_of(X, Y) :- parent_of(X, Y).
 ancestor_of(X, Y) :- parent_of(X, Z), ancestor_of(Z, Y).
 
-% ---- Queries (run in SWI-Prolog console) ----
-% ?- father_of(X, kavita).
-% ?- mother_of(X, laxmi).
-% ?- findall(X, sibling_of(kavita, X), List).
-% ?- findall(X, ancestor_of(X, sunil), List).
-% ?- ancestor_of(ram, sunil).
+% ---- Initialization: auto-print query results when file is loaded ----
+:- initialization(main).
+
+main :-
+    write('=== Family Tree Queries ==='), nl,
+    write('Father of kavita    : '),
+        (father_of(X1, kavita) -> write(X1) ; write(none)), nl,
+    write('Mother of laxmi     : '),
+        (mother_of(X2, laxmi)  -> write(X2) ; write(none)), nl,
+    findall(S, sibling_of(kavita, S), Siblings),
+    write('Siblings of kavita  : '), write(Siblings), nl,
+    findall(A, ancestor_of(A, sunil), Ancestors),
+    write('Ancestors of sunil  : '), write(Ancestors), nl,
+    write('Is ram ancestor of sunil? '),
+        (ancestor_of(ram, sunil) -> write(yes) ; write(no)), nl.

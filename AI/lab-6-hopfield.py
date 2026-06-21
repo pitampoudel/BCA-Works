@@ -15,18 +15,36 @@ def train(patterns):
 
 def recall(W, pattern, steps=5):
     x = to_bipolar(pattern)
-    for _ in range(steps):
-        x = np.sign(W @ x)
+    print(f"  Initial bipolar state : {x.tolist()}")
+    for i in range(steps):
+        x_new = np.sign(W @ x)
+        print(f"  Step {i + 1}               : {x_new.astype(int).tolist()}")
+        if np.array_equal(x_new, x):
+            print(f"  Converged at step {i + 1}.")
+            break
+        x = x_new
     return x.astype(int).tolist()
 
-# Stored binary patterns (0 or 1)
+# Stored binary patterns
 patterns = [[1, 0, 1, 0],
             [0, 1, 0, 1]]
+
 W = train(patterns)
 
-# Noisy input to test recall
-noisy  = [1, 0, 0, 0]
-output = recall(W, noisy)
+print("=" * 50)
+print("     LAB 6 Hopfield Neural Network by Pitam")
+print("=" * 50)
 
-print("Noisy input:   ", noisy)
-print("Recognized as: ", output)
+print(f"\nStored Patterns (binary):")
+for i, p in enumerate(patterns):
+    print(f"  Pattern {i + 1}: {p}  -> bipolar: {to_bipolar(p).tolist()}")
+
+print(f"\nWeight Matrix W:")
+print(W.astype(int))
+
+noisy = [1, 0, 0, 0]
+print(f"\nNoisy Input    : {noisy}")
+print(f"Recall Steps:")
+output = recall(W, noisy)
+print(f"\nNoisy Input    : {noisy}")
+print(f"Recognized as  : {output}")

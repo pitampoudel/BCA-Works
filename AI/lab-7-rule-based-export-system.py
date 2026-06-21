@@ -13,7 +13,26 @@ def recommend(prefs):
             return rule['food']
     return 'No recommendation found.'
 
-vegetarian = input("Are you vegetarian? (yes/no): ").strip().lower() == 'yes'
-spicy      = input("Do you like spicy food? (yes/no): ").strip().lower() == 'yes'
+print("=" * 50)
+print("   LAB 7 Rule-Based Food Recommendation System by Pitam")
+print("=" * 50)
 
-print("Recommended Food:", recommend({'vegetarian': vegetarian, 'spicy': spicy}))
+print("\nRules:")
+for rule in rules:
+    c = rule['conditions']
+    veg   = "Vegetarian" if c['vegetarian'] else "Non-Vegetarian"
+    spicy = "Spicy"      if c['spicy']      else "Not Spicy"
+    print(f"  IF {veg} AND {spicy} -> {rule['food']}")
+
+print("\n--- Test Cases ---")
+test_cases = [
+    {'vegetarian': True,  'spicy': True},
+    {'vegetarian': True,  'spicy': False},
+    {'vegetarian': False, 'spicy': True},
+    {'vegetarian': False, 'spicy': False},
+]
+for prefs in test_cases:
+    veg   = "Yes" if prefs['vegetarian'] else "No"
+    spicy = "Yes" if prefs['spicy']      else "No"
+    food  = recommend(prefs)
+    print(f"  Vegetarian: {veg:<3}  Spicy: {spicy:<3}  ->  {food}")
